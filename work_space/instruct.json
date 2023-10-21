@@ -1,0 +1,46 @@
+{
+    "1" : {
+        "TypeOfSub" : "Commutativity",
+        "NodesInvolved" : 
+            [
+                {
+                "IsNodeOutput" : 1,
+                "OperationName": "add.22",
+                "OperationType": "add",
+                "Operands": ["x", "y"],
+                "Id": 22,
+                "Position": [1, 8, 3]           
+                },
+                {
+                "IsNodeOutput" : 0,
+                "OperationName": "add.23",
+                "OperationType": "add",
+                "Operands": ["z", "literal.9"],
+                "Id": 23,
+                "Position": [1, 8, 3]        
+                }
+            ]
+    },
+    "2" : {
+        "TypeOfSub" : "Commutativity",
+        "NodesInvolved" : 
+            [
+                {
+                "IsNodeOutput" : 1,
+                "OperationName": "add.200",
+                "OperationType": "add",
+                "Operands": ["x", "y"],
+                "Id": 200,
+                "Position": [1, 8, 3]      
+                },
+                {
+                "IsNodeOutput" : 0,
+                "OperationName": "add.230",
+                "OperationType": "add",
+                "Operands": ["z", "literal.9"],
+                "Id": 230,
+                "Position": [1, 8, 3]  
+                }
+            ]
+    }
+}

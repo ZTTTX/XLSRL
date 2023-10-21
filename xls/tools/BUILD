@@ -1026,6 +1026,42 @@ cc_binary(
     ],
 )
 
+cc_library(
+    name = "JsonHandler",
+    hdrs = ["JsonHandler.h"],
+    deps = [
+        "//third_party/json_parser:json_parser",
+    ],
+)
+
+cc_binary(
+    name = "RL_main",
+    srcs = ["RL_main.cc"],
+    visibility = ["//xls:xls_users"],
+    deps = [
+        ":codegen",
+        ":codegen_flags",
+        ":codegen_flags_cc_proto",
+        ":scheduling_options_flags",
+        ":scheduling_options_flags_cc_proto",
+        "//xls/codegen:module_signature",
+        "//xls/common:exit_status",
+        "//xls/common:init_xls",
+        "//xls/common/file:filesystem",
+        "//xls/common/logging",
+        "//xls/common/status:ret_check",
+        "//xls/common/status:status_macros",
+        "//xls/ir",
+        "//xls/ir:ir_parser",
+        "//xls/scheduling:pipeline_schedule_cc_proto",
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/strings:str_format",
+        "JsonHandler",
+    ],
+)
+
+
 cc_binary(
     name = "simulate_module_main",
     srcs = ["simulate_module_main.cc"],

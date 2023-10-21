@@ -1,3 +1,17 @@
+# To make with tests
+
+bazel test -c opt -- //xls/...
+
+# To make without tests
+
+bazel build -c opt //xls/...
+
+# To run my own pass
+
+./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json > ./work_space/my_test.opt.ir
+
+# Run stuff
+
 ./bazel-bin/xls/contrib/xlscc/xlscc ./work_space/test.cc > ./work_space/test.ir
 
 ./bazel-bin/xls/tools/opt_main ./work_space/test.ir > ./work_space/test.opt.ir

@@ -1,0 +1,5 @@
+TESTEST
+./work_space/instruct.json======================
+==================
+{ SubId: 1, TypeOfSub: Commutativity, NodesInvolved: [{ IsNodeOutput: 1, OperationName: add.22, OperationType: add, Id: 22, Position: [1, 8, 3], Operands: [x, y] }, { IsNodeOutput: 0, OperationName: add.23, OperationType: add, Id: 23, Position: [1, 8, 3], Operands: [z, literal.9] }] }
+{ SubId: 2, TypeOfSub: Commutativity, NodesInvolved: [{ IsNodeOutput: 1, OperationName: add.200, OperationType: add, Id: 200, Position: [1, 8, 3], Operands: [x, y] }, { IsNodeOutput: 0, OperationName: add.230, OperationType: add, Id: 230, Position: [1, 8, 3], Operands: [z, literal.9] }] }

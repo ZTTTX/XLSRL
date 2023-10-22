@@ -22,7 +22,7 @@
             ]
     },
     "2" : {
-        "TypeOfSub" : "AddAssociativity",
+        "TypeOfSub" : "Commutativity",
         "NodesInvolved" : 
             [
                 {

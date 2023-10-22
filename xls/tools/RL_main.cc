@@ -20,7 +20,9 @@
 #include <string_view>
 #include <vector>
 
+#include "xls/tools/RewriteHandler.h"
 #include "xls/tools/JsonHandler.h"
+
 
 #include "absl/flags/flag.h"
 #include "absl/status/status.h"
@@ -51,7 +53,7 @@ Emit combinational module:
 )";
 
 namespace xls {
-namespace {
+// namespace {
 
 absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path) {
   if (ir_path == "-") {
@@ -68,14 +70,23 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path)
   std::cout << "TESTEST" << std::endl;
 
 
-  std::cout << json_path << "======================" << std::endl;
+  std::cout << json_path << "\n======================\n" << std::endl;
 
-  HandleJson(json_path);
+  //Read Json file, related files are JsonHandler.h
+  std::vector<JsonSingleSub> AllSubs;
+  AllSubs = ReadJsonByPath(json_path);
 
+  //Init rewrite handler instance and handle all substitution,
+  //related files are RewriteHandler.cc and .h
+  RewriteHandler Handler;
+  for (const JsonSingleSub& CurSub : AllSubs) {
+    Handler.HandleSubstitution(CurSub);
+  }
+  
   return absl::OkStatus();
 }
 
-}  // namespaceR
+// }  // namespaceR
 }  // namespace xls
 
 int main(int argc, char** argv) {

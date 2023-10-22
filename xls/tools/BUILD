@@ -1028,10 +1028,22 @@ cc_binary(
 
 cc_library(
     name = "JsonHandler",
+    srcs = ["JsonHandler.cc"],
     hdrs = ["JsonHandler.h"],
     deps = [
         "//third_party/json_parser:json_parser",
     ],
+)
+
+cc_library(
+    name = "RewriteHandler",
+    srcs = ["RewriteHandler.cc"],
+    hdrs = ["RewriteHandler.h"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "JsonHandler",
+    ],
+    
 )
 
 cc_binary(
@@ -1058,6 +1070,7 @@ cc_binary(
         "@com_google_absl//absl/status",
         "@com_google_absl//absl/strings:str_format",
         "JsonHandler",
+        "RewriteHandler",
     ],
 )
 

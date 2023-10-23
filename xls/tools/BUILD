@@ -1042,6 +1042,9 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "JsonHandler",
+        "//xls/ir",
+        "//xls/common/status:status_macros",
+        "//xls/common:exit_status",
     ],
     
 )

@@ -23,10 +23,11 @@ public:
     std::vector<std::string> Operands;
     int Id;
     std::vector<int> Position;
+    std::string FuncName;
 
     std::string toString() const {
         std::stringstream ss;
-        ss << "{ IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
+        ss << "{ FuncName" << FuncName << "IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
            << ", OperationType: " << OperationType << ", Id: " << Id << ", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {
@@ -60,6 +61,10 @@ public:
         }
         ss << "] }";
         return ss.str();
+    }
+
+    size_t GetNumberOfInvolvedNodes() const {
+        return NodesInvolved.size();
     }
 };
 

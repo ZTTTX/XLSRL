@@ -4,6 +4,7 @@
         "NodesInvolved" : 
             [
                 {
+                "FuncName" : "test_unroll",
                 "IsNodeOutput" : 1,
                 "OperationName": "add.22",
                 "OperationType": "add",
@@ -12,6 +13,7 @@
                 "Position": [1, 8, 3]           
                 },
                 {
+                "FuncName" : "test_unroll",
                 "IsNodeOutput" : 0,
                 "OperationName": "add.23",
                 "OperationType": "add",
@@ -26,6 +28,7 @@
         "NodesInvolved" : 
             [
                 {
+                "FuncName" : "test_unroll",
                 "IsNodeOutput" : 1,
                 "OperationName": "add.200",
                 "OperationType": "add",
@@ -34,6 +37,7 @@
                 "Position": [1, 8, 3]      
                 },
                 {
+                "FuncName" : "test_unroll",
                 "IsNodeOutput" : 0,
                 "OperationName": "add.230",
                 "OperationType": "add",

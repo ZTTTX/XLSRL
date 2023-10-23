@@ -73,6 +73,7 @@
         "streambuf": "cpp",
         "system_error": "cpp",
         "thread": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "*.ipp": "cpp"
     }
 }

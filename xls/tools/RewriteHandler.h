@@ -2,6 +2,10 @@
 #define REWRITE_HANDLER_H
 
 #include "JsonHandler.h"  // Include the header file for JsonNode
+#include "xls/ir/function_base.h"
+#include "xls/ir/function.h"
+#include "xls/common/status/status_macros.h"
+#include "xls/common/exit_status.h"
 
 #include <string>
 #include <functional>
@@ -12,14 +16,15 @@ namespace xls {
 
 class RewriteHandler {
 public:
-    RewriteHandler();  // Declare the constructor
+    explicit RewriteHandler(Package* package);  // constructor takes in IR package
 
     void HandleSubstitution(const JsonSingleSub& sub);
 
 private:
+    Package* p;
     // Individual handler functions for different types of substitutions.
-    void HandleCommutativity(const JsonSingleSub& sub);
-    void HandleAddAssociativity(const JsonSingleSub& sub);
+    absl::Status HandleCommutativity(const JsonSingleSub& sub);
+    absl::Status HandleAddAssociativity(const JsonSingleSub& sub);
     // ToDo: Add more handler
 
     std::unordered_map<std::string, std::function<void(const JsonSingleSub&)>> HandlerMap;

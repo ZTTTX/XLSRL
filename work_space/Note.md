@@ -10,6 +10,13 @@ bazel build -c opt //xls/...
 
 ./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json > ./work_space/my_test.opt.ir
 
+# Unit tests
+
+## Commutativity
+
+./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/CommutativityUnitTest.opt.ir ./work_space/UnitTests/CommutativityUnitTest.json > ./work_space/UnitTests/CommutativityUnitTest.rewrite.ir
+
+
 # Run stuff
 
 ./bazel-bin/xls/contrib/xlscc/xlscc ./work_space/test.cc > ./work_space/test.ir

@@ -24,25 +24,25 @@
             ]
     },
     "2" : {
-        "TypeOfSub" : "AddAssociativity",
+        "TypeOfSub" : "Commutativity",
         "NodesInvolved" : 
             [
                 {
                 "FuncName" : "test_unroll",
                 "IsNodeOutput" : 1,
-                "OperationName": "add.200",
-                "OperationType": "add",
-                "Operands": ["x", "y"],
-                "Id": 200,
+                "OperationName": "umul.24",
+                "OperationType": "umul",
+                "Operands": ["x", "z"],
+                "Id": 24,
                 "Position": [1, 8, 3]      
                 },
                 {
                 "FuncName" : "test_unroll",
                 "IsNodeOutput" : 0,
-                "OperationName": "add.230",
-                "OperationType": "add",
-                "Operands": ["z", "literal.9"],
-                "Id": 230,
+                "OperationName": "umul.25",
+                "OperationType": "umul",
+                "Operands": ["y", "umul.24"],
+                "Id": 25,
                 "Position": [1, 8, 3]  
                 }
             ]

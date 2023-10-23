@@ -27,29 +27,36 @@ void RewriteHandler::HandleSubstitution(const JsonSingleSub& sub) {
 absl::Status RewriteHandler::HandleCommutativity(const JsonSingleSub& sub) {
     JsonNode JsonNodeA;
     JsonNode JsonNodeB;
+    Node* TempOperand;
     if (sub.NodesInvolved.size() != 2){
-        printf("[ERROR]Incorrect size for commutativity");
-        exit(1);
+        return absl::UnknownError("Incorrect size for commutativity");
     } else {
         JsonNodeA = sub.NodesInvolved[0];
         JsonNodeB = sub.NodesInvolved[1];
     }
 
+    // For now we can only handle when two nodes are in same function
     // Handle Node A
     XLS_ASSIGN_OR_RETURN(Function* CurFuncA, p->GetFunction(JsonNodeA.FuncName));
     XLS_ASSIGN_OR_RETURN(Node* CurNodeA, CurFuncA->GetNode(JsonNodeA.OperationName));
-    std::string testtype = CurNodeA->GetOperandsString();
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncA->GetNode(JsonNodeA.Operands[0]));
+    XLS_RETURN_IF_ERROR(CurNodeA->ReplaceOperandNumber(0, TempOperand));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncA->GetNode(JsonNodeA.Operands[1]));
+    XLS_RETURN_IF_ERROR(CurNodeA->ReplaceOperandNumber(1, TempOperand));
 
+    // Handle Node B
+    XLS_ASSIGN_OR_RETURN(Function* CurFuncB, p->GetFunction(JsonNodeB.FuncName));
+    XLS_ASSIGN_OR_RETURN(Node* CurNodeB, CurFuncB->GetNode(JsonNodeB.OperationName));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncB->GetNode(JsonNodeB.Operands[0]));
+    XLS_RETURN_IF_ERROR(CurNodeB->ReplaceOperandNumber(0, TempOperand));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncB->GetNode(JsonNodeB.Operands[1]));
+    XLS_RETURN_IF_ERROR(CurNodeB->ReplaceOperandNumber(1, TempOperand));   
 
-
-
-    printf("THIS IS COMMUTATIVITY\n");
-    printf("%s", testtype.c_str()); 
     return absl::OkStatus();
 }
 
 absl::Status RewriteHandler::HandleAddAssociativity(const JsonSingleSub& sub) {
-    printf("THIS IS ADD ASSOCIATIVITY\n");
+
     return absl::OkStatus();
 }
 

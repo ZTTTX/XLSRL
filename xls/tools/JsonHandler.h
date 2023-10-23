@@ -20,7 +20,7 @@ public:
     int IsNodeOutput;
     std::string OperationName;
     std::string OperationType;
-    std::vector<std::string> Operands;
+    std::vector<std::string> Operands; //This stores the rewrited operands
     int Id;
     std::vector<int> Position;
     std::string FuncName;

@@ -65,12 +65,6 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path)
 
   XLS_RET_CHECK(p->GetTop().has_value())
       << "Package " << p->name() << " needs a top function/proc.";
-  auto main = [&p]() -> FunctionBase* { return p->GetTop().value(); };
-
-  std::cout << "TESTEST" << std::endl;
-
-
-  std::cout << json_path << "\n======================\n" << std::endl;
 
   //Read Json file, related files are JsonHandler.h
   std::vector<JsonSingleSub> AllSubs;
@@ -83,6 +77,9 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path)
     Handler.HandleSubstitution(CurSub);
   }
   
+  std::string RewritedIR = p->DumpIr();
+  std::cout << RewritedIR;
+
   return absl::OkStatus();
 }
 

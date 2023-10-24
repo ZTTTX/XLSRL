@@ -10,12 +10,6 @@ bazel build -c opt //xls/...
 
 ./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json > ./work_space/my_test.opt.ir
 
-# Unit tests
-
-## Commutativity
-
-./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/CommutativityUnitTest.opt.ir ./work_space/UnitTests/CommutativityUnitTest.json > ./work_space/UnitTests/CommutativityUnitTest.rewrite.ir
-
 
 # Run stuff
 
@@ -41,10 +35,21 @@ bazel build -c opt //xls/...
   --flop_inputs=true \
   --flop_outputs=true
 
-# Scheduling Probelm
+## Scheduling Probelm
 
 bazel run -c opt //xls/tools:benchmark_main -- $PWD/bazel-bin/xls/examples/crc32.opt.ir --clock_period_ps=1000 --delay_model=sky130
 
-# IR Visualization tool
+## IR Visualization tool
 
 bazel run -c opt //xls/visualization/ir_viz:app -- --delay_model=unit
+
+
+# Unit tests
+
+## Commutativity
+
+./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/CommutativityUnitTest.opt.ir ./work_space/UnitTests/CommutativityUnitTest.json > ./work_space/UnitTests/CommutativityUnitTest.rewrite.ir
+
+## Associativity
+
+./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/AssociativityUnitTest.opt.ir ./work_space/UnitTests/AssociativityUnitTest.json > ./work_space/UnitTests/AssociativityUnitTest.rewrite.ir

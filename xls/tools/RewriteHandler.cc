@@ -6,8 +6,8 @@ namespace xls {
 RewriteHandler::RewriteHandler(Package* package) : p(package) {
   // Initialize the handler map
     HandlerMap["Commutativity"] = [this](const JsonSingleSub& sub) {absl::Status status = HandleCommutativity(sub); };
-    HandlerMap["AddAssociativity"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleAddAssociativity(sub); };
-
+    HandlerMap["Associativity"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleAssociativity(sub); };
+    HandlerMap["DistributeMultOverAdd"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleDistributeMultOverAdd(sub); };
 }
 
 void RewriteHandler::HandleSubstitution(const JsonSingleSub& sub) {
@@ -25,17 +25,37 @@ void RewriteHandler::HandleSubstitution(const JsonSingleSub& sub) {
 // p is the package for all handler functions
 
 absl::Status RewriteHandler::HandleCommutativity(const JsonSingleSub& sub) {
+    // This function handles both add and mult commutativity
+    // It only allows one node rewrite each time
+    JsonNode JsonNodeA;
+    Node* TempOperand;
+    if (sub.NodesInvolved.size() != 1){
+        return absl::UnknownError("Incorrect size for commutativity");
+    } else {
+        JsonNodeA = sub.NodesInvolved[0];
+    }
+    XLS_ASSIGN_OR_RETURN(Function* CurFuncA, p->GetFunction(JsonNodeA.FuncName));
+    XLS_ASSIGN_OR_RETURN(Node* CurNodeA, CurFuncA->GetNode(JsonNodeA.OperationName));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncA->GetNode(JsonNodeA.Operands[0]));
+    XLS_RETURN_IF_ERROR(CurNodeA->ReplaceOperandNumber(0, TempOperand));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncA->GetNode(JsonNodeA.Operands[1]));
+    XLS_RETURN_IF_ERROR(CurNodeA->ReplaceOperandNumber(1, TempOperand));
+
+    return absl::OkStatus();
+}
+
+absl::Status RewriteHandler::HandleAssociativity(const JsonSingleSub& sub) {
+    // This function handles both add and mult associativity rewrites
     JsonNode JsonNodeA;
     JsonNode JsonNodeB;
     Node* TempOperand;
     if (sub.NodesInvolved.size() != 2){
-        return absl::UnknownError("Incorrect size for commutativity");
+        return absl::UnknownError("Incorrect size for associativity");
     } else {
         JsonNodeA = sub.NodesInvolved[0];
         JsonNodeB = sub.NodesInvolved[1];
     }
-
-    // For now we can only handle when two nodes are in same function
+    // For now we can only handle when two nodes are in same function, i.e., CurFuncA == CurFuncB
     // Handle Node A
     XLS_ASSIGN_OR_RETURN(Function* CurFuncA, p->GetFunction(JsonNodeA.FuncName));
     XLS_ASSIGN_OR_RETURN(Node* CurNodeA, CurFuncA->GetNode(JsonNodeA.OperationName));
@@ -52,14 +72,12 @@ absl::Status RewriteHandler::HandleCommutativity(const JsonSingleSub& sub) {
     XLS_ASSIGN_OR_RETURN(TempOperand, CurFuncB->GetNode(JsonNodeB.Operands[1]));
     XLS_RETURN_IF_ERROR(CurNodeB->ReplaceOperandNumber(1, TempOperand));   
 
-    return absl::OkStatus();
-}
-
-absl::Status RewriteHandler::HandleAddAssociativity(const JsonSingleSub& sub) {
 
     return absl::OkStatus();
 }
 
-
+absl::Status RewriteHandler::HandleDistributeMultOverAdd(const JsonSingleSub& sub) {
+    return absl::OkStatus();
+}
 // }
 }  // namespace xls

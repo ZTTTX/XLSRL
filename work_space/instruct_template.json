@@ -1,35 +1,32 @@
+This is NOT a working json, this only serves as a template for making json files
+All rewrite operation should be contained in one block
+In which each rewrite is a json object with a string as rewrite name
+Most information in this template is not needed, but are there in case some rewrite requires them
 {
     "1" : {
         "TypeOfSub" : "Commutativity",
         "NodesInvolved" : 
             [
                 {
-                "IsNodeOutput" : 1,
-                "OperationName": "add.22",
-                "OperationType": "add",
-                "Operands": ["x", "y"],
-                "Id": 22,
-                "Position": [1, 8, 3]           
-                },
-                {
-                "IsNodeOutput" : 0,
+                "IsNodeOutput" : 0, <-This is not needed
                 "OperationName": "add.23",
-                "OperationType": "add",
-                "Operands": ["z", "literal.9"],
-                "Id": 23,
-                "Position": [1, 8, 3]        
+                "OperationType": "add", <-This is not needed
+                "Operands": ["z", "literal.9"],  <- Here, the operand order is the 
+                                                    the order you wish to have after rewriting
+                "Id": 23, <-This is not needed
+                "Position": [1, 8, 3]    <-This is not needed    
                 }
             ]
     },
     "2" : {
-        "TypeOfSub" : "Commutativity",
+        "TypeOfSub" : "Associativity",
         "NodesInvolved" : 
             [
                 {
                 "IsNodeOutput" : 1,
-                "OperationName": "add.200",
+                "OperationName": "add.200", 
                 "OperationType": "add",
-                "Operands": ["x", "y"],
+                "Operands": ["x", "z"],
                 "Id": 200,
                 "Position": [1, 8, 3]      
                 },
@@ -37,7 +34,7 @@
                 "IsNodeOutput" : 0,
                 "OperationName": "add.230",
                 "OperationType": "add",
-                "Operands": ["z", "literal.9"],
+                "Operands": ["y", "add.200"],
                 "Id": 230,
                 "Position": [1, 8, 3]  
                 }

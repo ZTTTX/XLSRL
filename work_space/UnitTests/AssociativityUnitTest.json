@@ -1,0 +1,34 @@
+{
+    "1" : {
+        "TypeOfSub" : "Associativity",
+        "NodesInvolved" : 
+            [
+                {
+                "FuncName" : "test_unroll",
+                "OperationName": "add.22",
+                "Operands": ["x", "z"]       
+                },
+                {
+                "FuncName" : "test_unroll",
+                "OperationName": "add.23",
+                "Operands": ["y", "add.22"]      
+                }
+            ]
+    },
+    "2" : {
+        "TypeOfSub" : "Associativity",
+        "NodesInvolved" : 
+            [
+                {
+                "FuncName" : "test_unroll",
+                "OperationName": "umul.24",
+                "Operands": ["x", "z"]   
+                },
+                {
+                "FuncName" : "test_unroll",
+                "OperationName": "umul.25",
+                "Operands": ["y", "umul.24"]
+                }
+            ]
+    }
+}

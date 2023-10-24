@@ -5,45 +5,8 @@
             [
                 {
                 "FuncName" : "test_unroll",
-                "IsNodeOutput" : 1,
-                "OperationName": "add.22",
-                "OperationType": "add",
-                "Operands": ["x", "z"], 
-                "Id": 22,
-                "Position": [1, 8, 3]           
-                },
-                {
-                "FuncName" : "test_unroll",
-                "IsNodeOutput" : 0,
-                "OperationName": "add.23",
-                "OperationType": "add",
-                "Operands": ["y", "add.22"],
-                "Id": 23,
-                "Position": [1, 8, 3]        
-                }
-            ]
-    },
-    "2" : {
-        "TypeOfSub" : "Commutativity",
-        "NodesInvolved" : 
-            [
-                {
-                "FuncName" : "test_unroll",
-                "IsNodeOutput" : 1,
-                "OperationName": "umul.24",
-                "OperationType": "umul",
-                "Operands": ["x", "z"],
-                "Id": 24,
-                "Position": [1, 8, 3]      
-                },
-                {
-                "FuncName" : "test_unroll",
-                "IsNodeOutput" : 0,
-                "OperationName": "umul.25",
-                "OperationType": "umul",
-                "Operands": ["y", "umul.24"],
-                "Id": 25,
-                "Position": [1, 8, 3]  
+                "OperationName": "add.24",
+                "Operands": ["y", "x"]       
                 }
             ]
     }

@@ -24,7 +24,9 @@ private:
     Package* p;
     // Individual handler functions for different types of substitutions.
     absl::Status HandleCommutativity(const JsonSingleSub& sub);
-    absl::Status HandleAddAssociativity(const JsonSingleSub& sub);
+    absl::Status HandleAssociativity(const JsonSingleSub& sub);
+    absl::Status HandleDistributeMultOverAdd(const JsonSingleSub& sub);
+
     // ToDo: Add more handler
 
     std::unordered_map<std::string, std::function<void(const JsonSingleSub&)>> HandlerMap;

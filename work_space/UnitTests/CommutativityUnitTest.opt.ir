@@ -3,10 +3,5 @@ package my_package
 file_number 1 "././work_space/test.cc"
 
 top fn test_unroll(x: bits[32], y: bits[32], z: bits[32]) -> bits[32] {
-  literal.9: bits[32] = literal(value=1, id=9, pos=[(1,8,3)])
-  add.22: bits[32] = add(x, y, id=22, pos=[(1,8,3)])
-  add.23: bits[32] = add(z, add.22, id=23, pos=[(1,8,3)])
-  umul.24: bits[32] = umul(x, y, id=24, pos=[(1,8,3)])
-  umul.25: bits[32] = umul(z, umul.24, id=25, pos=[(1,8,3)])
-  ret add.26: bits[32] = add(add.22, umul.25, id=26, pos=[(1,8,3)])
+  ret add.24: bits[32] = add(x, y, id=24, pos=[(1,8,3)])
 }

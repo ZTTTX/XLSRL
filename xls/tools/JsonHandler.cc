@@ -25,6 +25,8 @@ JsonNode GetSingleNode(json_value* value){
         CurValue = value -> u.object.values[k].value;
         if (CurHandleName == "FuncName" ) {
             CurNode.FuncName = CurValue -> u.string.ptr;
+        } else if (CurHandleName == "IsTopNode") {
+            CurNode.IsTopNode = CurValue -> u.integer;
         } else if (CurHandleName == "IsNodeOutput") {
             CurNode.IsNodeOutput = CurValue -> u.integer;
         } else if (CurHandleName == "OperationName") {

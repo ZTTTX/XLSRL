@@ -1,25 +1,51 @@
 {
     "1" : {
-        "TypeOfSub" : "Associativity",
+        "TypeOfSub" : "DistributeMultOverAdd",
         "NodesInvolved" : 
             [
                 {
-                "FuncName" : "test_unroll",
-                "IsNodeOutput" : 1,
-                "OperationName": "add.200",
-                "OperationType": "add",
-                "Operands": ["x", "y"],
-                "Id": 200,
-                "Position": [1, 8, 3]      
+                    "IsNodeOutput" : 0,
+                    "FuncName" : "test_unroll",
+                    "IsTopNode" : 0,
+                    "OperationName": "add.22", 
+                    "Operands": ["x", "y"]    
                 },
                 {
-                "FuncName" : "test_unroll",
-                "IsNodeOutput" : 0,
-                "OperationName": "add.230",
-                "OperationType": "add",
-                "Operands": ["z", "literal.9"],
-                "Id": 230,
-                "Position": [1, 8, 3]  
+                    "IsNodeOutput" : 0,
+                    "FuncName" : "test_unroll",
+                    "IsTopNode" : 1,
+                    "OperationName": "umul.23",
+                    "Operands": ["z", "add.200"]
+                },
+                {
+                    "IsNodeOutput" : 1,
+                    "FuncName" : "test_unroll",
+                    "IsTopNode" : 0,
+                    "OperationName": "umul.200", 
+                    "OperationType": "umul",
+                    "Operands": ["x", "z"],
+                    "Id": 200,
+                    "Position": [1, 8, 3]      
+                },
+                {
+                    "IsNodeOutput" : 1,
+                    "FuncName" : "test_unroll",
+                    "IsTopNode" : 0,
+                    "OperationName": "umul.201", 
+                    "OperationType": "umul",
+                    "Operands": ["z", "y"],
+                    "Id": 201,
+                    "Position": [1, 8, 3]      
+                },
+                {
+                    "IsNodeOutput" : 1,
+                    "FuncName" : "test_unroll",
+                    "IsTopNode" : 1,
+                    "OperationName": "add.202",
+                    "OperationType": "add",
+                    "Operands": ["umul.200", "umul.201"],
+                    "Id": 202,
+                    "Position": [1, 8, 3]  
                 }
             ]
     }

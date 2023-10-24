@@ -25,12 +25,12 @@ void RewriteHandler::HandleSubstitution(const JsonSingleSub& sub) {
 // p is the package for all handler functions
 
 absl::Status RewriteHandler::HandleCommutativity(const JsonSingleSub& sub) {
-    // This function handles both add and mult commutativity
-    // It only allows one node rewrite each time
+    // This function handles both add and mult commutativity.
+    // It only allows one node rewrite each time.
     JsonNode JsonNodeA;
     Node* TempOperand;
     if (sub.NodesInvolved.size() != 1){
-        return absl::UnknownError("Incorrect size for commutativity");
+        return absl::UnknownError("[ERROR] Incorrect size for commutativity");
     } else {
         JsonNodeA = sub.NodesInvolved[0];
     }
@@ -45,12 +45,12 @@ absl::Status RewriteHandler::HandleCommutativity(const JsonSingleSub& sub) {
 }
 
 absl::Status RewriteHandler::HandleAssociativity(const JsonSingleSub& sub) {
-    // This function handles both add and mult associativity rewrites
+    // This function handles both add and mult associativity rewrites.
     JsonNode JsonNodeA;
     JsonNode JsonNodeB;
     Node* TempOperand;
     if (sub.NodesInvolved.size() != 2){
-        return absl::UnknownError("Incorrect size for associativity");
+        return absl::UnknownError("[ERROR] Incorrect size for associativity");
     } else {
         JsonNodeA = sub.NodesInvolved[0];
         JsonNodeB = sub.NodesInvolved[1];
@@ -77,6 +77,57 @@ absl::Status RewriteHandler::HandleAssociativity(const JsonSingleSub& sub) {
 }
 
 absl::Status RewriteHandler::HandleDistributeMultOverAdd(const JsonSingleSub& sub) {
+    JsonNode JsonNodeAdd;     
+    JsonNode JsonNodeMult;
+    JsonNode JsonNode_OutAdd;
+    JsonNode JsonNode_OutMultA;
+    JsonNode JsonNode_OutMultB;  
+
+    // Handles the json inforamtion,
+    if (sub.NodesInvolved.size() != 5) {
+        return absl::UnknownError("[ERROR] Incorrect size for distribute mult over add");
+    } else {
+        bool HasGotA = false;
+        bool AllPass = false;
+        for (int i = 0; i < 5; i++) {
+            if (sub.NodesInvolved[i].IsTopNode == 0 && sub.NodesInvolved[i].IsNodeOutput == 0) {
+                JsonNodeAdd = sub.NodesInvolved[i];
+            } else if (sub.NodesInvolved[i].IsTopNode == 1 && sub.NodesInvolved[i].IsNodeOutput == 0) {
+                JsonNodeMult = sub.NodesInvolved[i];
+            } else if (sub.NodesInvolved[i].IsTopNode == 1 && sub.NodesInvolved[i].IsNodeOutput == 1) {
+                JsonNode_OutAdd = sub.NodesInvolved[i];
+            } else if (!HasGotA) {
+                JsonNode_OutMultA = sub.NodesInvolved[i];
+                HasGotA = true;
+            } else {
+                JsonNode_OutMultB = sub.NodesInvolved[i];
+                AllPass = true;
+            }
+        }
+        if (!AllPass) {
+            return absl::UnknownError("[Error] One or more ops are undefined");
+        }
+    }
+    Node* TempOperandA;
+    Node* TempOperandB;
+    //Now we locate the function. For now we assume all ops and rewrite are in one single function
+    XLS_ASSIGN_OR_RETURN(Function* CurFunc, p->GetFunction(JsonNodeAdd.FuncName));
+    XLS_ASSIGN_OR_RETURN(Node* NodeAdd, CurFunc->GetNode(JsonNodeAdd.OperationName));
+    XLS_ASSIGN_OR_RETURN(Node* NodeMult, CurFunc->GetNode(JsonNodeMult.OperationName));
+    //Make new mult node A
+    XLS_ASSIGN_OR_RETURN(TempOperandA, CurFunc->GetNode(JsonNode_OutMultA.Operands[0]));
+    XLS_ASSIGN_OR_RETURN(TempOperandB, CurFunc->GetNode(JsonNode_OutMultA.Operands[1]));
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultA, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, 32, Op::kUMul));
+    //Make new mult node B
+    XLS_ASSIGN_OR_RETURN(TempOperandA, CurFunc->GetNode(JsonNode_OutMultB.Operands[0]));
+    XLS_ASSIGN_OR_RETURN(TempOperandB, CurFunc->GetNode(JsonNode_OutMultB.Operands[1]));
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultB, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, 32, Op::kUMul));
+    //Make new graph output. Replce graph output to new output
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_Add, CurFunc->MakeNode<BinOp>(NodeOut_MultB->loc(), NodeOut_MultA, NodeOut_MultB, Op::kAdd));
+    XLS_RETURN_IF_ERROR(NodeMult->ReplaceUsesWith(NodeOut_Add));
+    //Remove previous nodes in correct order
+    XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(NodeMult));
+    XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(NodeAdd));
     return absl::OkStatus();
 }
 // }

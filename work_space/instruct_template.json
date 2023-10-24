@@ -8,13 +8,13 @@ Most information in this template is not needed, but are there in case some rewr
         "NodesInvolved" : 
             [
                 {
-                "IsNodeOutput" : 0, <-This is not needed
+                "IsNodeOutput" : 0,
                 "OperationName": "add.23",
-                "OperationType": "add", <-This is not needed
+                "OperationType": "add",
                 "Operands": ["z", "literal.9"],  <- Here, the operand order is the 
                                                     the order you wish to have after rewriting
-                "Id": 23, <-This is not needed
-                "Position": [1, 8, 3]    <-This is not needed    
+                "Id": 23,
+                "Position": [1, 8, 3]       
                 }
             ]
     },
@@ -39,5 +39,28 @@ Most information in this template is not needed, but are there in case some rewr
                 "Position": [1, 8, 3]  
                 }
             ]
+    },
+    "3" : {
+        "TypeOfSub" : "DistributeMultOverAdd",
+        "NodesInvolved" : 
+            [
+                {
+                "IsNodeOutput" : 1,
+                "OperationName": "add.200", 
+                "OperationType": "add",
+                "Operands": ["x", "y"],
+                "Id": 200,
+                "Position": [1, 8, 3]      
+                },
+                {
+                "IsNodeOutput" : 0,
+                "OperationName": "umul.230",
+                "OperationType": "umul",
+                "Operands": ["y", "add.200"],
+                "Id": 230,
+                "Position": [1, 8, 3]  
+                }
+            ]
     }
+
 }

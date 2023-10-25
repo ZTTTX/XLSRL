@@ -5,21 +5,22 @@ namespace xls {
 
 RewriteHandler::RewriteHandler(Package* package) : p(package) {
   // Initialize the handler map
-    HandlerMap["Commutativity"] = [this](const JsonSingleSub& sub) {absl::Status status = HandleCommutativity(sub); };
-    HandlerMap["Associativity"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleAssociativity(sub); };
-    HandlerMap["DistributeMultOverAdd"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleDistributeMultOverAdd(sub); };
+    HandlerMap["Commutativity"] = [this](const JsonSingleSub& sub) {absl::Status status = HandleCommutativity(sub);};
+    HandlerMap["Associativity"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleAssociativity(sub);};
+    HandlerMap["DistributeMultOverAdd"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleDistributeMultOverAdd(sub);};
+    HandlerMap["SumSame"] = [this](const JsonSingleSub& sub) {absl::Status status =  HandleSumSame(sub);};
 }
 
 void RewriteHandler::HandleSubstitution(const JsonSingleSub& sub) {
-  std::string type = sub.TypeOfSub;
+    std::string type = sub.TypeOfSub;
+    // Find the appropriate handler based on the type and call it.
+    if (HandlerMap.find(type) != HandlerMap.end()) {
+        HandlerMap[type](sub);
+    } else {
+        printf("[Error] Unsupport Subsitution Type");
+        exit(1);
+    }
 
-  // Find the appropriate handler based on the type and call it.
-  if (HandlerMap.find(type) != HandlerMap.end()) {
-    HandlerMap[type](sub);
-  } else {
-    printf("[Error] Unsupport Subsitution Type");
-    exit(1);
-  }
 }
 
 // p is the package for all handler functions
@@ -90,11 +91,11 @@ absl::Status RewriteHandler::HandleDistributeMultOverAdd(const JsonSingleSub& su
         bool HasGotA = false;
         bool AllPass = false;
         for (int i = 0; i < 5; i++) {
-            if (sub.NodesInvolved[i].IsTopNode == 0 && sub.NodesInvolved[i].IsNodeOutput == 0) {
+            if (sub.NodesInvolved[i].ReplaceSelfWith == "None" && sub.NodesInvolved[i].IsNodeOutput == 0) {
                 JsonNodeAdd = sub.NodesInvolved[i];
-            } else if (sub.NodesInvolved[i].IsTopNode == 1 && sub.NodesInvolved[i].IsNodeOutput == 0) {
+            } else if (sub.NodesInvolved[i].ReplaceSelfWith != "None" && sub.NodesInvolved[i].IsNodeOutput == 0) {
                 JsonNodeMult = sub.NodesInvolved[i];
-            } else if (sub.NodesInvolved[i].IsTopNode == 1 && sub.NodesInvolved[i].IsNodeOutput == 1) {
+            } else if (sub.NodesInvolved[i].ReplaceSelfWith == "Self" && sub.NodesInvolved[i].IsNodeOutput == 1) {
                 JsonNode_OutAdd = sub.NodesInvolved[i];
             } else if (!HasGotA) {
                 JsonNode_OutMultA = sub.NodesInvolved[i];
@@ -117,17 +118,39 @@ absl::Status RewriteHandler::HandleDistributeMultOverAdd(const JsonSingleSub& su
     //Make new mult node A
     XLS_ASSIGN_OR_RETURN(TempOperandA, CurFunc->GetNode(JsonNode_OutMultA.Operands[0]));
     XLS_ASSIGN_OR_RETURN(TempOperandB, CurFunc->GetNode(JsonNode_OutMultA.Operands[1]));
-    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultA, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, 32, Op::kUMul));
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultA, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, JsonNode_OutMultA.BitWidth, Op::kUMul));
     //Make new mult node B
     XLS_ASSIGN_OR_RETURN(TempOperandA, CurFunc->GetNode(JsonNode_OutMultB.Operands[0]));
     XLS_ASSIGN_OR_RETURN(TempOperandB, CurFunc->GetNode(JsonNode_OutMultB.Operands[1]));
-    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultB, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, 32, Op::kUMul));
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_MultB, CurFunc->MakeNode<ArithOp>(NodeAdd->loc(), TempOperandA, TempOperandB, JsonNode_OutMultB.BitWidth, Op::kUMul));
     //Make new graph output. Replce graph output to new output
     XLS_ASSIGN_OR_RETURN(Node* NodeOut_Add, CurFunc->MakeNode<BinOp>(NodeOut_MultB->loc(), NodeOut_MultA, NodeOut_MultB, Op::kAdd));
     XLS_RETURN_IF_ERROR(NodeMult->ReplaceUsesWith(NodeOut_Add));
     //Remove previous nodes in correct order
     XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(NodeMult));
     XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(NodeAdd));
+
+    return absl::OkStatus();
+}
+
+absl::Status RewriteHandler::HandleSumSame(const JsonSingleSub& sub) {
+    JsonNode JsonNodeA;
+    Node* TempOperand;
+    if (sub.NodesInvolved.size() != 1){
+        return absl::UnknownError("[ERROR] Incorrect size for SumSame");
+    } else {
+        JsonNodeA = sub.NodesInvolved[0];
+    }
+    XLS_ASSIGN_OR_RETURN(Function* CurFunc, p->GetFunction(JsonNodeA.FuncName));
+    XLS_ASSIGN_OR_RETURN(Node* CurNode, CurFunc->GetNode(JsonNodeA.OperationName));
+    XLS_ASSIGN_OR_RETURN(TempOperand, CurFunc->GetNode(JsonNodeA.Operands[0]));
+    int Multiplier = 2;
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_Literal, CurFunc->MakeNode<Literal>(CurNode->loc(), Value(UBits(Multiplier, Bits::MinBitCountUnsigned(Multiplier)))));
+    XLS_ASSIGN_OR_RETURN(Node* NodeOut_Mult, CurFunc->MakeNode<ArithOp>(NodeOut_Literal->loc(), TempOperand, NodeOut_Literal, JsonNodeA.BitWidth, Op::kUMul));
+    
+    XLS_RETURN_IF_ERROR(CurNode->ReplaceUsesWith(NodeOut_Mult));
+    XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(CurNode));
+    
     return absl::OkStatus();
 }
 // }

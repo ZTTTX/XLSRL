@@ -26,6 +26,7 @@ private:
     absl::Status HandleCommutativity(const JsonSingleSub& sub);
     absl::Status HandleAssociativity(const JsonSingleSub& sub);
     absl::Status HandleDistributeMultOverAdd(const JsonSingleSub& sub);
+    absl::Status HandleSumSame(const JsonSingleSub& sub);
 
     // ToDo: Add more handler
 

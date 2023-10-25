@@ -53,3 +53,7 @@ bazel run -c opt //xls/visualization/ir_viz:app -- --delay_model=unit
 ## Associativity
 
 ./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/AssociativityUnitTest.opt.ir ./work_space/UnitTests/AssociativityUnitTest.json > ./work_space/UnitTests/AssociativityUnitTest.rewrite.ir
+
+## DistributeMultOverAdd
+
+./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/DistributeMultOverAddUnitTest.opt.ir ./work_space/UnitTests/DistributeMultOverAddUnitTest.json > ./work_space/UnitTests/DistributeMultOverAddUnitTest.rewrite.ir

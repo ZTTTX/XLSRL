@@ -24,12 +24,13 @@ public:
     int Id;
     std::vector<int> Position;
     std::string FuncName;
-    int IsTopNode;
+    std::string ReplaceSelfWith;
+    int BitWidth;
 
     std::string toString() const {
         std::stringstream ss;
         ss << "{ FuncName" << FuncName << "IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
-           << ", OperationType: " << OperationType << ", Id: " << Id << ", IsTopNode: "<< IsTopNode <<", Position: [";
+           << ", OperationType: " << OperationType << ", Id: " << Id << ", ReplaceSelfWith: "<< ReplaceSelfWith <<", BitWidth: " << BitWidth <<", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {
             ss << Position[i];

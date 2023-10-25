@@ -1,51 +1,14 @@
 {
     "1" : {
-        "TypeOfSub" : "DistributeMultOverAdd",
+        "TypeOfSub" : "SumSame",
         "NodesInvolved" : 
             [
                 {
-                    "IsNodeOutput" : 0,
                     "FuncName" : "test_unroll",
-                    "IsTopNode" : 0,
-                    "OperationName": "add.22", 
-                    "Operands": ["x", "y"]    
-                },
-                {
-                    "IsNodeOutput" : 0,
-                    "FuncName" : "test_unroll",
-                    "IsTopNode" : 1,
-                    "OperationName": "umul.23",
-                    "Operands": ["z", "add.200"]
-                },
-                {
-                    "IsNodeOutput" : 1,
-                    "FuncName" : "test_unroll",
-                    "IsTopNode" : 0,
-                    "OperationName": "umul.200", 
-                    "OperationType": "umul",
-                    "Operands": ["x", "z"],
-                    "Id": 200,
-                    "Position": [1, 8, 3]      
-                },
-                {
-                    "IsNodeOutput" : 1,
-                    "FuncName" : "test_unroll",
-                    "IsTopNode" : 0,
-                    "OperationName": "umul.201", 
-                    "OperationType": "umul",
-                    "Operands": ["z", "y"],
-                    "Id": 201,
-                    "Position": [1, 8, 3]      
-                },
-                {
-                    "IsNodeOutput" : 1,
-                    "FuncName" : "test_unroll",
-                    "IsTopNode" : 1,
-                    "OperationName": "add.202",
-                    "OperationType": "add",
-                    "Operands": ["umul.200", "umul.201"],
-                    "Id": 202,
-                    "Position": [1, 8, 3]  
+                    "ReplaceSelfWith" : "None",
+                    "OperationName": "add.22",
+                    "Operands" : ["x", "x"],
+                    "BitWidth" : 32    
                 }
             ]
     }

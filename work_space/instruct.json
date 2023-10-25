@@ -1,12 +1,37 @@
 {
     "1" : {
-        "TypeOfSub" : "SumSame",
+        "FuncName" : "test_unroll",
         "NodesInvolved" : 
             [
-                {
-                    "FuncName" : "test_unroll",
-                    "ReplaceSelfWith" : "None",
+                {           
+                    "ReplaceSelfWith" : "Kill",
+                    "IsNodeOutput" : 0,
+                    "OperationName": "add.23",
+                    "OperationType": "kAdd",
+                    "Operands" : ["x", "x"],
+                    "BitWidth" : 32    
+                },
+                {           
+                    "ReplaceSelfWith" : "Gen",
+                    "IsNodeOutput" : 1,
+                    "OperationName": "add.201",
+                    "OperationType": "kAdd",
+                    "Operands" : ["z", "add.200"],
+                    "BitWidth" : 32    
+                },
+                {           
+                    "ReplaceSelfWith" : "Gen",
+                    "IsNodeOutput" : 1,
+                    "OperationName": "add.200",
+                    "OperationType": "kAdd",
+                    "Operands" : ["x", "y"],
+                    "BitWidth" : 32    
+                },
+                {           
+                    "ReplaceSelfWith" : "add.200",
+                    "IsNodeOutput" : 0,
                     "OperationName": "add.22",
+                    "OperationType": "kAdd",
                     "Operands" : ["x", "x"],
                     "BitWidth" : 32    
                 }

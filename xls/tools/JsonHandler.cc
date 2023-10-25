@@ -23,9 +23,7 @@ JsonNode GetSingleNode(json_value* value){
     for (k = 0; k < NumOfEntries; k++){
         CurHandleName = value -> u.object.values[k].name;
         CurValue = value -> u.object.values[k].value;
-        if (CurHandleName == "FuncName" ) {
-            CurNode.FuncName = CurValue -> u.string.ptr;
-        } else if (CurHandleName == "BitWidth") {
+        if (CurHandleName == "BitWidth") {
             CurNode.BitWidth = CurValue -> u.integer;
         } else if (CurHandleName == "ReplaceSelfWith") {
             CurNode.ReplaceSelfWith = CurValue -> u.string.ptr;
@@ -65,7 +63,7 @@ JsonSingleSub GetSingleSub(json_value* value, int CurId) {
     //Value here points to the value of one of the objects
     JsonSingleSub CurSub;
     CurSub.SubId = CurId;
-    CurSub.TypeOfSub = value -> u.object.values[0].value -> u.string.ptr;
+    CurSub.FuncName = value -> u.object.values[0].value -> u.string.ptr;
     CurSub.NodesInvolved = GetInvolvedNode(value -> u.object.values[1].value);
     return CurSub;
 }

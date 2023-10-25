@@ -23,13 +23,12 @@ public:
     std::vector<std::string> Operands; //This stores the rewrited operands
     int Id;
     std::vector<int> Position;
-    std::string FuncName;
     std::string ReplaceSelfWith;
-    int BitWidth;
+    int64_t BitWidth;
 
     std::string toString() const {
         std::stringstream ss;
-        ss << "{ FuncName" << FuncName << "IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
+        ss << "{" << "IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
            << ", OperationType: " << OperationType << ", Id: " << Id << ", ReplaceSelfWith: "<< ReplaceSelfWith <<", BitWidth: " << BitWidth <<", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {
@@ -50,12 +49,12 @@ public:
 class JsonSingleSub {
 public:
     int SubId;
-    std::string TypeOfSub;
+    std::string FuncName;
     std::vector<JsonNode> NodesInvolved;
 
     std::string toString() const {
         std::stringstream ss;
-        ss << "{ SubId: " << SubId << ", TypeOfSub: " << TypeOfSub << ", NodesInvolved: [";
+        ss << "{ SubId: " << SubId << ", FuncName: " << FuncName << ", NodesInvolved: [";
         // Print each JsonNode in NodesInvolved
         for (size_t i = 0; i < NodesInvolved.size(); ++i) {
             ss << NodesInvolved[i].toString();

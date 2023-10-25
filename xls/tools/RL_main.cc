@@ -72,9 +72,9 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path)
 
   //Init rewrite handler instance and handle all substitution,
   //related files are RewriteHandler.cc and .h
-  RewriteHandler Handler(p.get());
+  
   for (const JsonSingleSub& CurSub : AllSubs) {
-    Handler.HandleSubstitution(CurSub);
+    XLS_RETURN_IF_ERROR(HandleSingleSub(p.get(), CurSub));
   }
   
   std::string RewritedIR = p->DumpIr();

@@ -12,29 +12,38 @@
 #include <unordered_map>
 
 namespace xls {
-// namespace {
 
-class RewriteHandler {
+class NodeHandler;
+
+// Function to handle a single substitution.
+absl::Status HandleSingleSub(Package* p, const JsonSingleSub& sub);
+
+class NodeHandler {
 public:
-    explicit RewriteHandler(Package* package);  // constructor takes in IR package
-
-    void HandleSubstitution(const JsonSingleSub& sub);
-
+    explicit NodeHandler(Package* package); 
+    absl::Status DispatchNodeOperation(const JsonNode& node);
+    void SetCurrentFunction(Function* func);
+    void SetNodeMap(const std::unordered_map<std::string, Node*>& node_map);
+    void UpdateNodeMap(const std::string& key, Node* value);
+    absl::Status HandleKill(const JsonNode& node);
+    absl::Status HandleSubstitution(const JsonNode& node);
+    bool AreDependenciesSatisfied(const JsonNode& node);
 private:
-    Package* p;
-    // Individual handler functions for different types of substitutions.
-    absl::Status HandleCommutativity(const JsonSingleSub& sub);
-    absl::Status HandleAssociativity(const JsonSingleSub& sub);
-    absl::Status HandleDistributeMultOverAdd(const JsonSingleSub& sub);
-    absl::Status HandleSumSame(const JsonSingleSub& sub);
+    Package* p_; 
+    Function* CurFunc_;
+    std::unordered_map<std::string, Node*> NodeMap_;
 
-    // ToDo: Add more handler
+    std::unordered_map<std::string, std::function<absl::Status(const JsonNode&)>> handler_map_;
 
-    std::unordered_map<std::string, std::function<void(const JsonSingleSub&)>> HandlerMap;
+    //ToDo add more handler
+    absl::Status HandlekAdd(const JsonNode& node);
+
+
+    // Helper method to initialize the handler map.
+    void InitializeHandlerMap();
 };
 
 
-// }
 }  // namespace xls
 
 #endif

@@ -4,63 +4,59 @@ In which each rewrite is a json object with a string as rewrite name
 Most information in this template is not needed, but are there in case some rewrite requires them
 {
     "1" : {
-        "TypeOfSub" : "Commutativity",
+        "FuncName" : "test_unroll",
         "NodesInvolved" : 
             [
-                {
-                "IsNodeOutput" : 0,
-                "OperationName": "add.23",
-                "OperationType": "add",
-                "Operands": ["z", "literal.9"],  <- Here, the operand order is the 
-                                                    the order you wish to have after rewriting
-                "Id": 23,
-                "Position": [1, 8, 3]       
-                }
-            ]
-    },
-    "2" : {
-        "TypeOfSub" : "Associativity",
-        "NodesInvolved" : 
-            [
-                {
-                "IsNodeOutput" : 1,
-                "OperationName": "add.200", 
-                "OperationType": "add",
-                "Operands": ["x", "z"],
-                "Id": 200,
-                "Position": [1, 8, 3]      
+                {           
+                    "ReplaceSelfWith" : "Kill", <- Kill flag will destory this node.
+                    "Value" : 0,
+                    "OperationName": "add.23",
+                    "OperationType": "kAdd",
+                    "Operands" : ["z", "literal.9"], 
+                    "BitWidth" : 32    
                 },
-                {
-                "IsNodeOutput" : 0,
-                "OperationName": "add.230",
-                "OperationType": "add",
-                "Operands": ["y", "add.200"],
-                "Id": 230,
-                "Position": [1, 8, 3]  
-                }
-            ]
-    },
-    "3" : {
-        "TypeOfSub" : "DistributeMultOverAdd",
-        "NodesInvolved" : 
-            [
-                {
-                "IsNodeOutput" : 1,
-                "OperationName": "add.200", 
-                "OperationType": "add",
-                "Operands": ["x", "y"],
-                "Id": 200,
-                "Position": [1, 8, 3]      
+                {           
+                    "ReplaceSelfWith" : "Gen", <- Gen flag will generate a node
+                    "Value" : 1,
+                    "OperationName": "add.201", <- This only serves as the name inside json file, actual IR node name will be auto-generated
+                    "OperationType": "kAdd", <- This indicates the node type
+                    "Operands" : ["literal.100", "mult.202"], <- You can refer to any node in this file, order does not matter
+                    "BitWidth" : 32    
                 },
-                {
-                "IsNodeOutput" : 0,
-                "OperationName": "umul.230",
-                "OperationType": "umul",
-                "Operands": ["y", "add.200"],
-                "Id": 230,
-                "Position": [1, 8, 3]  
+                {           
+                    "ReplaceSelfWith" : "Gen", <- This is an example of generating mult node
+                    "Value" : 1,
+                    "OperationName": "mult.202",
+                    "OperationType": "kUMul",
+                    "Operands" : ["x", "literal.101"], 
+                    "BitWidth" : 32    
+                },
+                {           
+                    "ReplaceSelfWith" : "Gen", <- Example of generating a literal node
+                    "Value" : 37,
+                    "OperationName": "literal.100",
+                    "OperationType": "Literal",
+                    "Operands" : [], <- Operands of literal node should be empty
+                    "BitWidth" : 32    <- if bitwidth is specified, it will be used
+                },
+                {           
+                    "ReplaceSelfWith" : "Gen", <- This is an example of generating literal node with unspecified width
+                    "Value" : 37,
+                    "OperationName": "literal.101",
+                    "OperationType": "Literal",
+                    "Operands" : [],
+                    "BitWidth" : -1    <- Set width to -1 to let the program decide on the best width, this may not work if this node is a parent of an add node.
+                },
+                {           
+                    "ReplaceSelfWith" : "add.201", <- To replace a node reference outside the rewrite zone, 
+                                                        put in the json name of the node that you want to replace this node with.
+                    "Value" : 0,
+                    "OperationName": "add.22", <- This node name will be replaced and destoryed. 
+                    "OperationType": "kAdd",
+                    "Operands" : ["x", "x"],
+                    "BitWidth" : 32    
                 }
             ]
-    }
+    }  
 
 }

@@ -5,7 +5,7 @@
             [
                 {           
                     "ReplaceSelfWith" : "Kill",
-                    "IsNodeOutput" : 0,
+                    "Value" : 0,
                     "OperationName": "add.23",
                     "OperationType": "kAdd",
                     "Operands" : ["x", "x"],
@@ -13,23 +13,31 @@
                 },
                 {           
                     "ReplaceSelfWith" : "Gen",
-                    "IsNodeOutput" : 1,
+                    "Value" : 1,
                     "OperationName": "add.201",
                     "OperationType": "kAdd",
-                    "Operands" : ["z", "add.200"],
+                    "Operands" : ["literal.100", "add.200"],
                     "BitWidth" : 32    
                 },
                 {           
                     "ReplaceSelfWith" : "Gen",
-                    "IsNodeOutput" : 1,
+                    "Value" : 1,
                     "OperationName": "add.200",
                     "OperationType": "kAdd",
                     "Operands" : ["x", "y"],
                     "BitWidth" : 32    
                 },
                 {           
+                    "ReplaceSelfWith" : "Gen",
+                    "Value" : 37,
+                    "OperationName": "literal.100",
+                    "OperationType": "Literal",
+                    "Operands" : [],
+                    "BitWidth" : 32    
+                },
+                {           
                     "ReplaceSelfWith" : "add.200",
-                    "IsNodeOutput" : 0,
+                    "Value" : 0,
                     "OperationName": "add.22",
                     "OperationType": "kAdd",
                     "Operands" : ["x", "x"],

@@ -24,7 +24,7 @@ public:
     absl::Status DispatchNodeOperation(const JsonNode& node);
     void SetCurrentFunction(Function* func);
     void SetNodeMap(const std::unordered_map<std::string, Node*>& node_map);
-    void UpdateNodeMap(const std::string& key, Node* value);
+    void SetInsertionPointNode(Node* LastNode);
     absl::Status HandleKill(const JsonNode& node);
     absl::Status HandleSubstitution(const JsonNode& node);
     bool AreDependenciesSatisfied(const JsonNode& node);
@@ -32,11 +32,14 @@ private:
     Package* p_; 
     Function* CurFunc_;
     std::unordered_map<std::string, Node*> NodeMap_;
+    Node* InsertionPointNode_;
 
     std::unordered_map<std::string, std::function<absl::Status(const JsonNode&)>> handler_map_;
 
     //ToDo add more handler
     absl::Status HandlekAdd(const JsonNode& node);
+    absl::Status HandlekUMul(const JsonNode& node);
+    absl::Status HandleLiteral(const JsonNode& node);
 
 
     // Helper method to initialize the handler map.

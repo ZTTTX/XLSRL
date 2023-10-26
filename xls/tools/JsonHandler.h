@@ -17,18 +17,18 @@ namespace xls {
 
 class JsonNode {
 public:
-    int IsNodeOutput;
+    int Value;
     std::string OperationName;
     std::string OperationType;
     std::vector<std::string> Operands; //This stores the rewrited operands
     int Id;
     std::vector<int> Position;
     std::string ReplaceSelfWith;
-    int64_t BitWidth;
+    int64_t BitWidth = -1;
 
     std::string toString() const {
         std::stringstream ss;
-        ss << "{" << "IsNodeOutput: " << IsNodeOutput << ", OperationName: " << OperationName
+        ss << "{" << "Value: " << Value << ", OperationName: " << OperationName
            << ", OperationType: " << OperationType << ", Id: " << Id << ", ReplaceSelfWith: "<< ReplaceSelfWith <<", BitWidth: " << BitWidth <<", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {

@@ -1,10 +1,11 @@
-add.200add.201package my_package
+package my_package
 
 file_number 1 "././work_space/test.cc"
 
 top fn test_unroll(x: bits[32], y: bits[32], z: bits[32]) -> bits[32] {
-  add_200: bits[32] = add(x, y, id=25)
+  literal.25: bits[32] = literal(value=37, id=25)
+  add.26: bits[32] = add(x, y, id=26)
   literal.9: bits[32] = literal(value=1, id=9, pos=[(1,8,3)])
-  add_201: bits[32] = add(z, add_200, id=26)
-  ret add.24: bits[32] = add(add_200, y, id=24, pos=[(1,8,3)])
+  add.27: bits[32] = add(literal.25, add.26, id=27)
+  ret add.24: bits[32] = add(add.26, y, id=24, pos=[(1,8,3)])
 }

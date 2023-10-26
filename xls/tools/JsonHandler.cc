@@ -27,8 +27,8 @@ JsonNode GetSingleNode(json_value* value){
             CurNode.BitWidth = CurValue -> u.integer;
         } else if (CurHandleName == "ReplaceSelfWith") {
             CurNode.ReplaceSelfWith = CurValue -> u.string.ptr;
-        } else if (CurHandleName == "IsNodeOutput") {
-            CurNode.IsNodeOutput = CurValue -> u.integer;
+        } else if (CurHandleName == "Value") {
+            CurNode.Value = CurValue -> u.integer;
         } else if (CurHandleName == "OperationName") {
             CurNode.OperationName = CurValue -> u.string.ptr;
         } else if (CurHandleName == "OperationType") {

@@ -1048,6 +1048,40 @@ cc_library(
     ],
     
 )
+cc_library(
+    name = "RunScheduler",
+    srcs = ["RunScheduler.cc"],
+    hdrs = ["RunScheduler.h"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//xls/codegen:module_signature",
+        "//xls/codegen:pipeline_generator",
+        "//xls/common:exit_status",
+        "//xls/common:init_xls",
+        "//xls/common:math_util",
+        "//xls/common/file:filesystem",
+        "//xls/common/logging",
+        "//xls/common/status:status_macros",
+        "//xls/delay_model:analyze_critical_path",
+        "//xls/delay_model:delay_estimator",
+        "//xls/delay_model:delay_estimators",
+        "//xls/interpreter:ir_interpreter",
+        "//xls/interpreter:random_value",
+        "//xls/ir",
+        "//xls/ir:ir_parser",
+        "//xls/jit:function_jit",
+        "//xls/jit:proc_jit",
+        "//xls/passes:bdd_query_engine",
+        "//xls/passes:optimization_pass",
+        "//xls/passes:optimization_pass_pipeline",
+        "//xls/scheduling:pipeline_schedule",
+        "//xls/scheduling:scheduling_pass_pipeline",
+        "@com_google_absl//absl/status",
+        "@com_google_absl//absl/status:statusor",
+        "@com_google_absl//absl/strings",
+        "@com_google_absl//absl/time",
+    ],
+)
 
 cc_binary(
     name = "RL_main",
@@ -1074,6 +1108,7 @@ cc_binary(
         "@com_google_absl//absl/strings:str_format",
         "JsonHandler",
         "RewriteHandler",
+        "RunScheduler",
     ],
 )
 

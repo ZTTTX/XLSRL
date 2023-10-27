@@ -8,7 +8,7 @@ bazel build -c opt //xls/...
 
 # To run my own pass
 
-./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json > ./work_space/my_test.opt.ir
+./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json ./work_space/my_test.opt.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
 
 
 # Run stuff

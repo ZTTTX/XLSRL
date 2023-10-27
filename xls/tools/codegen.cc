@@ -144,6 +144,7 @@ absl::StatusOr<verilog::CodegenOptions> CodegenOptionsFromProto(
   return options;
 }
 
+
 absl::StatusOr<PipelineSchedule> RunSchedulingPipeline(
     FunctionBase* main, const SchedulingOptions& scheduling_options,
     const DelayEstimator* delay_estimator,
@@ -262,5 +263,6 @@ absl::StatusOr<CodegenResult> ScheduleAndCodegen(
   XLS_LOG(FATAL) << "Invalid generator kind: "
                  << static_cast<int>(codegen_flags_proto.generator());
 }
+
 
 }  // namespace xls

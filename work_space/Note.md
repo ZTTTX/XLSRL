@@ -11,6 +11,8 @@ bazel build -c opt //xls/...
 ./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json ./work_space/my_test.opt.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
 
 
+
+
 # Run stuff
 
 ./bazel-bin/xls/contrib/xlscc/xlscc ./work_space/test.cc > ./work_space/test.ir
@@ -44,7 +46,11 @@ bazel run -c opt //xls/tools:benchmark_main -- $PWD/bazel-bin/xls/examples/crc32
 bazel run -c opt //xls/visualization/ir_viz:app -- --delay_model=unit
 
 
-# Unit tests
+# To get ir-python graph(Deprecated)
+
+bazel run //third_party/graph_extraction:graph_extraction -- /home/miao/xls/work_space/my_test.opt.ir test_unroll
+
+# Unit tests(Deprecated)
 
 ## Commutativity
 

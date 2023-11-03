@@ -50,6 +50,7 @@ Most information in this template is not needed, but are there in case some rewr
                 {           
                     "ReplaceSelfWith" : "add.201", <- To replace a node reference outside the rewrite zone, 
                                                         put in the json name of the node that you want to replace this node with.
+                                                        This node must be in the "gen" list
                     "Value" : 0,
                     "OperationName": "add.22", <- This node name will be replaced and destoryed. 
                     "OperationType": "kAdd",

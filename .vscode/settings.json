@@ -97,6 +97,8 @@
         "coroutine": "cpp",
         "random": "cpp",
         "rope": "cpp",
-        "slist": "cpp"
+        "slist": "cpp",
+        "cfenv": "cpp",
+        "scoped_allocator": "cpp"
     }
 }

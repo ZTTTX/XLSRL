@@ -1,0 +1,275 @@
+{
+    "0": {
+        "FuncName": "AddAssociativity",
+        "NodesInvolved": [
+            {
+                "OperationName": "add0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "z1",
+                    "y1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add1",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "x1",
+                    "add0"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "z1",
+                    "x1"
+                ],
+                "idNum": 1,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.2",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.1",
+                    "y1"
+                ],
+                "idNum": 2,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "add1"
+            }
+        ]
+    },
+    "1": {
+        "FuncName": "MulAssociativity",
+        "NodesInvolved": [
+            {
+                "OperationName": "mul2",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "z2",
+                    "y2"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "mul3",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "x2",
+                    "mul2"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "umul.3",
+                "BitWidth": 32,
+                "OperationType": "umul",
+                "Operands": [
+                    "z2",
+                    "x2"
+                ],
+                "idNum": 3,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "umul.4",
+                "BitWidth": 32,
+                "OperationType": "umul",
+                "Operands": [
+                    "umul.3",
+                    "y2"
+                ],
+                "idNum": 4,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "mul3"
+            }
+        ]
+    },
+    "2": {
+        "FuncName": "MulDistribution",
+        "NodesInvolved": [
+            {
+                "OperationName": "umul4",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "y3",
+                    "z3"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "umul5",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "y3",
+                    "x3"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add6",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "umul4",
+                    "umul5"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "umul.6",
+                "BitWidth": 32,
+                "OperationType": "umul",
+                "Operands": [
+                    "add.5",
+                    "y3"
+                ],
+                "idNum": 6,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "add6"
+            },
+            {
+                "OperationName": "add.5",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "z3",
+                    "x3"
+                ],
+                "idNum": 5,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "3": {
+        "FuncName": "SumSame",
+        "NodesInvolved": [
+            {
+                "OperationName": "literal7",
+                "BitWidth": -1,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 2,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "umul8",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "x4",
+                    "literal7"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.7",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "x4",
+                    "x4"
+                ],
+                "idNum": 7,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "umul8"
+            }
+        ]
+    }
+}

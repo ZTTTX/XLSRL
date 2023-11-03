@@ -27,12 +27,16 @@ void NodeHandler::SetNodeMap(const std::unordered_map<std::string, Node*>& node_
     NodeMap_ = node_map;
 }
 
-absl::Status NodeHandler::HandleKill(const JsonNode& node)  {
+absl::StatusOr<std::vector<Node*>> NodeHandler::HandleKill(const JsonNode& node, std::vector<Node*> DummyNodeVec)  {
+    XLS_ASSIGN_OR_RETURN(Node* DummyNode, CurFunc_->MakeNode<Literal>(InsertionPointNode_->loc(), Value(UBits(0, node.BitWidth))));
     XLS_ASSIGN_OR_RETURN(Node* NodeToRemove, CurFunc_->GetNode(node.OperationName));
+    XLS_RETURN_IF_ERROR(NodeToRemove->ReplaceUsesWith(DummyNode));
     XLS_RETURN_IF_ERROR(CurFunc_->RemoveNode(NodeToRemove));
     NodeMap_.erase(node.OperationName); 
-    return absl::OkStatus();
+    DummyNodeVec.push_back(DummyNode);
+    return DummyNodeVec;
 }
+
 absl::Status NodeHandler::HandleSubstitution(const JsonNode& node) {
     Node* NewNode = NodeMap_[node.ReplaceSelfWith];
     XLS_ASSIGN_OR_RETURN(Node* OldNode, CurFunc_->GetNode(node.OperationName));
@@ -79,6 +83,10 @@ absl::Status HandleSingleSub(Package* p, const JsonSingleSub& sub) {
         }
     }
     if (!NodeGenMap.empty()) {
+        // For DeBug:
+        // for (const auto& pair : NodeGenMap) {
+        //     std::cout << "Key: " << pair.first << " Value: " << pair.second.toString() << std::endl;
+        // }
         return absl::InvalidArgumentError("One or more node cannot be generated due to dependency");
     }
 
@@ -88,22 +96,18 @@ absl::Status HandleSingleSub(Package* p, const JsonSingleSub& sub) {
             XLS_RETURN_IF_ERROR(handler.HandleSubstitution(node));
         }
     }
+    std::vector<Node*> DummyNodeVec;
     for (const auto& node : sub.NodesInvolved) {
     //Kill every node that has kill or substitution flag
         if (node.ReplaceSelfWith != "Gen") {
-            XLS_RETURN_IF_ERROR(handler.HandleKill(node));
+            XLS_ASSIGN_OR_RETURN(DummyNodeVec, handler.HandleKill(node, DummyNodeVec));
         }
     }
-
+    for (Node* DummyNode : DummyNodeVec) {
+        XLS_RETURN_IF_ERROR(CurFunc->RemoveNode(DummyNode));
+    }
+    
     return absl::OkStatus();
-}
-
-void NodeHandler::InitializeHandlerMap() {
-    // Register all operation handlers here.
-    handler_map_["kAdd"] = [this](const JsonNode& node) { return this->HandlekAdd(node);};
-    handler_map_["kUMul"] = [this](const JsonNode& node) { return this->HandlekUMul(node);};
-    handler_map_["Literal"] = [this](const JsonNode& node) { return this->HandleLiteral(node);};
-
 }
 
 absl::Status NodeHandler::DispatchNodeOperation(const JsonNode& node) {
@@ -113,6 +117,14 @@ absl::Status NodeHandler::DispatchNodeOperation(const JsonNode& node) {
         return it->second(node);  // Dispatch to the appropriate handler.
     }
     return absl::UnknownError("[Error] Unsupported operation type");
+}
+
+void NodeHandler::InitializeHandlerMap() {
+    // Register all operation handlers here.
+    handler_map_["kAdd"] = [this](const JsonNode& node) { return this->HandlekAdd(node);};
+    handler_map_["kUMul"] = [this](const JsonNode& node) { return this->HandlekUMul(node);};
+    handler_map_["Literal"] = [this](const JsonNode& node) { return this->HandleLiteral(node);};
+
 }
 
 absl::Status NodeHandler::HandlekAdd(const JsonNode& node) {

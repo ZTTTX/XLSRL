@@ -25,7 +25,7 @@ public:
     void SetCurrentFunction(Function* func);
     void SetNodeMap(const std::unordered_map<std::string, Node*>& node_map);
     void SetInsertionPointNode(Node* LastNode);
-    absl::Status HandleKill(const JsonNode& node);
+    absl::StatusOr<std::vector<Node*>> HandleKill(const JsonNode& node,  std::vector<Node*> DummyNodeVec);
     absl::Status HandleSubstitution(const JsonNode& node);
     bool AreDependenciesSatisfied(const JsonNode& node);
 private:

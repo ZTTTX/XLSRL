@@ -10,8 +10,16 @@ bazel build -c opt //xls/...
 
 ./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json ./work_space/my_test.opt.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
 
+# To Run with python generated json file:
+
+./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./third_party/graph_extraction/test_ins.json ./work_space/my_test.opt.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
 
 
+## To run unit tests with python generated instruction files
+
+./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
+
+# ==================================================
 
 # Run stuff
 

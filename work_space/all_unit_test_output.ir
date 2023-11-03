@@ -1,0 +1,24 @@
+package my_package
+
+file_number 1 "././work_space/test.cc"
+
+top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
+  add.18: bits[32] = add(z1, y1, id=18)
+  ret add.19: bits[32] = add(x1, add.18, id=19)
+}
+
+fn MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
+  umul.22: bits[32] = umul(z2, y2, id=22)
+  ret umul.23: bits[32] = umul(x2, umul.22, id=23)
+}
+
+fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
+  umul.27: bits[32] = umul(y3, z3, id=27)
+  umul.26: bits[32] = umul(y3, x3, id=26)
+  ret add.28: bits[32] = add(umul.27, umul.26, id=28)
+}
+
+fn SumSame(x4: bits[32]) -> bits[32] {
+  literal.31: bits[2] = literal(value=2, id=31)
+  ret umul.32: bits[32] = umul(x4, literal.31, id=32)
+}

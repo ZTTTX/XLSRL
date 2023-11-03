@@ -8,6 +8,10 @@ int test_unroll(int x, int y, int z) {
   ret = D + 1;
   return ret;
 }
+
+int test_add(int a, int b){
+  return a+b;
+}
 // #pragma hls_top
 // int test_unroll(int x) {
 //   int ret = 0;

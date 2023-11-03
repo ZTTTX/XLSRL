@@ -38,9 +38,13 @@ private:
 
     //ToDo add more handler
     absl::Status HandlekAdd(const JsonNode& node);
+    absl::Status HandlekSub(const JsonNode& node);
     absl::Status HandlekUMul(const JsonNode& node);
+    absl::Status HandlekSMul(const JsonNode& node);
     absl::Status HandleLiteral(const JsonNode& node);
-
+    absl::Status HandlekNeg(const JsonNode& node);
+    absl::Status HandlekShll(const JsonNode& node);
+    absl::Status HandlekShrl(const JsonNode& node);
 
     // Helper method to initialize the handler map.
     void InitializeHandlerMap();

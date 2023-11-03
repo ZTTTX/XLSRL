@@ -7,7 +7,7 @@ top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
   ret add.2: bits[32] = add(add.1, y1, id=2)
 }
 
-fn MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
+fn Unsigned_MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
   umul.3: bits[32] = umul(z2, x2, id=3)
   ret umul.4: bits[32] = umul(umul.3, y2, id=4)
 }
@@ -21,3 +21,25 @@ fn SumSame(x4: bits[32]) -> bits[32] {
   ret add.7: bits[32] = add(x4, x4, id=7)
 }
 
+fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] { 
+  umul.8: bits[32] = umul(x5, y5, id=8)
+  add.9: bits[32] = add(umul.8, z5, id=9)
+  umul.10: bits[32] = umul(x5, y5, id=10)
+  ret add.11: bits[32] = add(umul.10, y5, id=11)
+}
+
+fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32] {
+  smul.12: bits[32] = smul(z6, x6, id=12)
+  ret smul.13: bits[32] = smul(smul.12, y6, id=13)
+}
+
+fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] { 
+  ret sub.14: bits[32] = sub(x7, y7, id=14)
+}
+
+fn MulByTwo(x8: bits[32]) -> bits[32] { 
+  literal.15: bits[8] = literal(value=4, id=15)
+  umul.16: bits[32] = umul(x8, literal.15, id=16)
+  literal.17: bits[2] = literal(value=2, id=17)
+  ret umul.18: bits[32] = umul(x8, literal.17, id=18)
+}

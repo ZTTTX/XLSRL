@@ -4,5 +4,9 @@ file_number 1 "././work_space/test.cc"
 
 top fn test_unroll(x: bits[32], y: bits[32], z: bits[32]) -> bits[32] {
   add.28: bits[32] = add(z, x, id=28)
+  umul.3: bits[32] = umul(z, x, id=3)
+  umul.4: bits[32] = umul(umul.3, y, id=4)
+  add.5: bits[32] = add(z, x, id=5)
+  umul.6: bits[32] = umul(add.5, y, id=6)
   ret umul.24: bits[32] = umul(add.28, y, id=24, pos=[(1,8,3)])
 }

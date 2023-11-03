@@ -3,7 +3,12 @@ package my_package
 file_number 1 "././work_space/test.cc"
 
 top fn test_unroll(x: bits[32], y: bits[32], z: bits[32]) -> bits[32] {
-  umul.31: bits[32] = umul(y, z, id=31)
-  umul.30: bits[32] = umul(y, x, id=30)
-  ret add.32: bits[32] = add(umul.31, umul.30, id=32)
+  umul.34: bits[32] = umul(z, y, id=34)
+  umul.39: bits[32] = umul(y, z, id=39)
+  umul.38: bits[32] = umul(y, x, id=38)
+  umul.44: bits[32] = umul(y, z, id=44)
+  umul.43: bits[32] = umul(y, x, id=43)
+  umul.35: bits[32] = umul(x, umul.34, id=35)
+  add.40: bits[32] = add(umul.39, umul.38, id=40)
+  ret add.45: bits[32] = add(umul.44, umul.43, id=45)
 }

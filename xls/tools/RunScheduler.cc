@@ -591,20 +591,27 @@ absl::Status RunScheduleAndPrint(std::string_view path,
 
 
 absl::Status RunScheduler(std::string_view path, std::vector<std::string_view> positional_arguments) {
-
+  bool HaveFlagToRun = false;
   std::optional<int64_t> clock_period_ps;
   if (absl::GetFlag(FLAGS_clock_period_ps) > 0) {
     clock_period_ps = absl::GetFlag(FLAGS_clock_period_ps);
+    HaveFlagToRun = true;
   }
   std::optional<int64_t> pipeline_stages;
   if (absl::GetFlag(FLAGS_pipeline_stages) > 0) {
     pipeline_stages = absl::GetFlag(FLAGS_pipeline_stages);
+    HaveFlagToRun = true;
   }
   std::optional<int64_t> clock_margin_percent;
   if (absl::GetFlag(FLAGS_clock_margin_percent) > 0) {
     clock_margin_percent = absl::GetFlag(FLAGS_clock_margin_percent);
+    HaveFlagToRun = true;
   }
-  return xls::RunScheduleAndPrint(path, clock_period_ps, pipeline_stages, clock_margin_percent);
+  if (HaveFlagToRun) {
+    return xls::RunScheduleAndPrint(path, clock_period_ps, pipeline_stages, clock_margin_percent);
+  } else {
+    return absl::OkStatus();
+  } 
 }
 
 

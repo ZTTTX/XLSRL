@@ -45,7 +45,8 @@ private:
     absl::Status HandlekNeg(const JsonNode& node);
     absl::Status HandlekShll(const JsonNode& node);
     absl::Status HandlekShrl(const JsonNode& node);
-
+    absl::Status HandlekNot(const JsonNode& node);
+    absl::Status HandlekConcat(const JsonNode& node);
     // Helper method to initialize the handler map.
     void InitializeHandlerMap();
 };

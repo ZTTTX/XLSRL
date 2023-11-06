@@ -537,5 +537,272 @@
                 "ReplaceSelfWith": "Kill"
             }
         ]
+    },
+    "8": {
+        "FuncName": "MergeLeftRightShift",
+        "NodesInvolved": [
+            {
+                "OperationName": "add18",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "y9",
+                    "z9"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shll19",
+                "BitWidth": 32,
+                "OperationType": "kShll",
+                "Operands": [
+                    "x9",
+                    "add18"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shll.19",
+                "BitWidth": 32,
+                "OperationType": "shll",
+                "Operands": [
+                    "x9",
+                    "y9"
+                ],
+                "idNum": 19,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "shll19"
+            },
+            {
+                "OperationName": "shll.20",
+                "BitWidth": 32,
+                "OperationType": "shll",
+                "Operands": [
+                    "shll.19",
+                    "z9"
+                ],
+                "idNum": 20,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "9": {
+        "FuncName": "MergeLeftRightShift",
+        "NodesInvolved": [
+            {
+                "OperationName": "add20",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "y9",
+                    "z9"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shrl21",
+                "BitWidth": 32,
+                "OperationType": "kShrl",
+                "Operands": [
+                    "x9",
+                    "add20"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shrl.21",
+                "BitWidth": 32,
+                "OperationType": "shrl",
+                "Operands": [
+                    "x9",
+                    "y9"
+                ],
+                "idNum": 21,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "shrl21"
+            },
+            {
+                "OperationName": "shrl.22",
+                "BitWidth": 32,
+                "OperationType": "shrl",
+                "Operands": [
+                    "shrl.21",
+                    "z9"
+                ],
+                "idNum": 22,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "10": {
+        "FuncName": "NegToNot",
+        "NodesInvolved": [
+            {
+                "OperationName": "literal22",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not23",
+                "BitWidth": 32,
+                "OperationType": "kNot",
+                "Operands": [
+                    "x10"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add24",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "not23",
+                    "literal22"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.24",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "x10"
+                ],
+                "idNum": 24,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "add24"
+            }
+        ]
+    },
+    "11": {
+        "FuncName": "NotOverConcat",
+        "NodesInvolved": [
+            {
+                "OperationName": "not25",
+                "BitWidth": 4,
+                "OperationType": "kNot",
+                "Operands": [
+                    "x11"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not26",
+                "BitWidth": 4,
+                "OperationType": "kNot",
+                "Operands": [
+                    "y11"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not27",
+                "BitWidth": 4,
+                "OperationType": "kNot",
+                "Operands": [
+                    "z11"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not28",
+                "BitWidth": 4,
+                "OperationType": "kNot",
+                "Operands": [
+                    "v11"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ReplaceSelfWith": "Gen"
+            }
+        ]
     }
 }

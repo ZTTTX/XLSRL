@@ -129,6 +129,8 @@ void NodeHandler::InitializeHandlerMap() {
     handler_map_["kNeg"] = [this](const JsonNode& node) { return this->HandlekNeg(node);};
     handler_map_["kShll"] = [this](const JsonNode& node) { return this->HandlekShll(node);};
     handler_map_["kShrl"] = [this](const JsonNode& node) { return this->HandlekShll(node);};
+    handler_map_["kNot"] = [this](const JsonNode& node) { return this->HandlekNot(node);};
+    handler_map_["kConcat"] = [this](const JsonNode& node) { return this->HandlekConcat(node);};
 
 
 }
@@ -297,6 +299,39 @@ absl::Status NodeHandler::HandlekShrl(const JsonNode& node) {
     XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<BinOp>(operand2->loc(), operand1, operand2, Op::kShrl));
     NodeMap_[node.OperationName] = NewNode;
     return absl::OkStatus();
+}
+
+absl::Status NodeHandler::HandlekNot(const JsonNode& node) {
+    const auto& operands = node.Operands;
+    if (operands.size() != 1) {
+        return absl::InvalidArgumentError("Expected one operands for kNot operation.");
+    }  
+    Node* operand1;
+    if (CurFunc_->GetNode(node.Operands[0]).ok()) {
+        XLS_ASSIGN_OR_RETURN(operand1, CurFunc_->GetNode(node.Operands[0]));
+    } else {
+        operand1 = NodeMap_[node.Operands[0]];
+    }
+    XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<UnOp>(operand1->loc(), operand1, Op::kNot));
+    NodeMap_[node.OperationName] = NewNode;
+
+    return absl::OkStatus();
+}
+
+absl::Status NodeHandler::HandlekConcat(const JsonNode& node) {
+    std::vector<Node*> OperandsInvolved;
+    const auto& operands = node.Operands;
+    Node* TempOperand;
+    for (const auto& CurOperand : operands) {
+        if (CurFunc_->GetNode(CurOperand).ok()) {
+            XLS_ASSIGN_OR_RETURN(TempOperand, CurFunc_->GetNode(CurOperand));
+        } else {
+            TempOperand = NodeMap_[CurOperand];
+        }
+        OperandsInvolved.push_back(TempOperand);
+    }
+    XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<Concat>(TempOperand->loc(), absl::MakeSpan(OperandsInvolved)));
+    NodeMap_[node.OperationName] = NewNode;
 }
 
 }  // namespace xls

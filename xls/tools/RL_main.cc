@@ -98,9 +98,8 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path,
   XLS_RETURN_IF_ERROR(DumpIRToFile(RewritedIR, std::string(out_path)));
 
   //Call Scheduler
-  if (positional_arguments.size() > 3) {
-    XLS_RETURN_IF_ERROR(RunScheduler(out_path, positional_arguments));
-  }
+  XLS_RETURN_IF_ERROR(RunScheduler(out_path, positional_arguments));
+
   //
 
 

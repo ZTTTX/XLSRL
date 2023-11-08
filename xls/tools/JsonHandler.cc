@@ -43,7 +43,15 @@ JsonNode GetSingleNode(json_value* value){
             for (h=0; h < CurValue->u.array.length; h++) {
                 CurNode.Position.push_back(CurValue -> u.array.values[h] -> u.integer);
             }
-        }
+        } else if (CurHandleName == "Indices") {
+            for (l=0; l< CurValue->u.array.length; l++){
+                CurNode.Indices.push_back(CurValue -> u.array.values[l] -> u.string.ptr);
+            }     
+        } else if (CurHandleName == "ArraySize") {
+            for (l=0; l< CurValue->u.array.length; l++){
+                CurNode.ArraySize.push_back(CurValue -> u.array.values[l] -> u.integer);
+            }     
+        } 
     }
     return CurNode;
 }

@@ -25,11 +25,16 @@ public:
     std::vector<int> Position;
     std::string ReplaceSelfWith;
     int64_t BitWidth = -1;
+    std::vector<std::string> Indices;
+    std::vector<int> ArraySize;
 
     std::string toString() const {
         std::stringstream ss;
         ss << "{" << "Value: " << Value << ", OperationName: " << OperationName
-           << ", OperationType: " << OperationType << ", Id: " << Id << ", ReplaceSelfWith: "<< ReplaceSelfWith <<", BitWidth: " << BitWidth <<", Position: [";
+           << ", OperationType: " << OperationType << ", Id: " << Id 
+           << ", ReplaceSelfWith: "<< ReplaceSelfWith 
+           <<", BitWidth: " << BitWidth 
+           <<", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {
             ss << Position[i];
@@ -40,6 +45,16 @@ public:
         for (size_t i = 0; i < Operands.size(); ++i) {
             ss << Operands[i];
             if (i < Operands.size() - 1) ss << ", ";
+        }
+        ss << "], Indices: [";
+        for (size_t i = 0; i < Indices.size(); ++i) {
+            ss << Indices[i];
+            if (i < Indices.size() - 1) ss << ", ";
+        }
+        ss << "], ArraySize: [";
+        for (size_t i = 0; i < ArraySize.size(); ++i) {
+            ss << ArraySize[i];
+            if (i < ArraySize.size() - 1) ss << ", ";
         }
         ss << "] }";
         return ss.str();

@@ -31,6 +31,14 @@ bazel build -c opt //xls/...
 
 # Run stuff
 
+##
+
+./bazel-bin/xls/contrib/xlscc/xlscc ./work_space/test.cc --block_from_class TestBlock --block_pb block.pb > ./work_space/test.ir
+
+./bazel-bin/xls/tools/opt_main ./work_space/test.ir --inline_procs > ./work_space/test.opt.ir
+
+##
+
 ./bazel-bin/xls/contrib/xlscc/xlscc ./work_space/test.cc > ./work_space/test.ir
 
 ./bazel-bin/xls/tools/opt_main ./work_space/test.ir > ./work_space/test.opt.ir

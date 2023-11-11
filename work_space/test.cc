@@ -1,4 +1,4 @@
-#define N 2 // Define matrix size, e.g., 8x8
+#define N 8 // Define matrix size, e.g., 8x8
 
 #pragma hls_top
 void matrix_multiply(int a[N][N], int b[N][N], int result[N][N]) {

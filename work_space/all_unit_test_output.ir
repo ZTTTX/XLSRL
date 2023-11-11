@@ -3,70 +3,76 @@ package my_package
 file_number 1 "././work_space/test.cc"
 
 top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
-  add.54: bits[32] = add(z1, y1, id=54)
-  ret add.55: bits[32] = add(x1, add.54, id=55)
+  add.60: bits[32] = add(z1, y1, id=60)
+  ret add.61: bits[32] = add(x1, add.60, id=61)
 }
 
 fn Unsigned_MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
-  umul.58: bits[32] = umul(z2, y2, id=58)
-  ret umul.59: bits[32] = umul(x2, umul.58, id=59)
+  umul.64: bits[32] = umul(z2, y2, id=64)
+  ret umul.65: bits[32] = umul(x2, umul.64, id=65)
 }
 
 fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
-  umul.63: bits[32] = umul(y3, z3, id=63)
-  umul.62: bits[32] = umul(y3, x3, id=62)
-  ret add.64: bits[32] = add(umul.63, umul.62, id=64)
+  umul.69: bits[32] = umul(y3, z3, id=69)
+  umul.68: bits[32] = umul(y3, x3, id=68)
+  ret add.70: bits[32] = add(umul.69, umul.68, id=70)
 }
 
 fn SumSame(x4: bits[32]) -> bits[32] {
-  literal.67: bits[2] = literal(value=2, id=67)
-  ret umul.68: bits[32] = umul(x4, literal.67, id=68)
+  literal.73: bits[2] = literal(value=2, id=73)
+  ret umul.74: bits[32] = umul(x4, literal.73, id=74)
 }
 
 fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] {
-  literal.70: bits[32] = literal(value=1, id=70)
+  literal.76: bits[32] = literal(value=1, id=76)
   umul.8: bits[32] = umul(x5, y5, id=8)
-  add.71: bits[32] = add(x5, literal.70, id=71)
+  add.77: bits[32] = add(x5, literal.76, id=77)
   add.9: bits[32] = add(umul.8, z5, id=9)
-  ret umul.72: bits[32] = umul(add.71, y5, id=72)
+  ret umul.78: bits[32] = umul(add.77, y5, id=78)
 }
 
 fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32] {
-  smul.75: bits[32] = smul(z6, y6, id=75)
-  ret smul.76: bits[32] = smul(x6, smul.75, id=76)
+  smul.81: bits[32] = smul(z6, y6, id=81)
+  ret smul.82: bits[32] = smul(x6, smul.81, id=82)
 }
 
 fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
-  neg.79: bits[32] = neg(y7, id=79)
-  ret add.80: bits[32] = add(x7, neg.79, id=80)
+  neg.85: bits[32] = neg(y7, id=85)
+  ret add.86: bits[32] = add(x7, neg.85, id=86)
 }
 
 fn MulByTwo(x8: bits[32]) -> bits[32] {
   literal.15: bits[8] = literal(value=4, id=15)
-  literal.82: bits[1] = literal(value=1, id=82)
+  literal.88: bits[1] = literal(value=1, id=88)
   umul.16: bits[32] = umul(x8, literal.15, id=16)
-  ret shll.83: bits[32] = shll(x8, literal.82, id=83)
+  ret shll.89: bits[32] = shll(x8, literal.88, id=89)
 }
 
 fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
-  add.86: bits[32] = add(y9, z9, id=86)
-  add.90: bits[32] = add(y9, z9, id=90)
-  shll.87: bits[32] = shll(x9, add.86, id=87)
-  shll.91: bits[32] = shll(x9, add.90, id=91)
+  add.92: bits[32] = add(y9, z9, id=92)
+  add.96: bits[32] = add(y9, z9, id=96)
+  shll.93: bits[32] = shll(x9, add.92, id=93)
+  shll.97: bits[32] = shll(x9, add.96, id=97)
   ret literal.23: bits[32] = literal(value=1, id=23)
 }
 
 fn NegToNot(x10: bits[32]) -> bits[32] {
-  not.94: bits[32] = not(x10, id=94)
-  literal.95: bits[32] = literal(value=1, id=95)
-  ret add.96: bits[32] = add(not.94, literal.95, id=96)
+  not.100: bits[32] = not(x10, id=100)
+  literal.101: bits[32] = literal(value=1, id=101)
+  ret add.102: bits[32] = add(not.100, literal.101, id=102)
 }
 
 fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits[16] {
   concat.25: bits[16] = concat(x11, y11, z11, v11, id=25)
-  not.98: bits[4] = not(z11, id=98)
-  not.99: bits[4] = not(y11, id=99)
-  not.100: bits[4] = not(v11, id=100)
-  not.101: bits[4] = not(x11, id=101)
+  not.104: bits[4] = not(z11, id=104)
+  not.105: bits[4] = not(y11, id=105)
+  not.106: bits[4] = not(v11, id=106)
+  not.107: bits[4] = not(x11, id=107)
   ret not.26: bits[16] = not(concat.25, id=26)
+}
+
+fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
+  add.108: bits[32] = add(z12, y12, id=108)
+  add.109: bits[32] = add(x12, add.108, id=109)
+  ret add.29: bits[32] = add(add.109, y12, id=29)
 }

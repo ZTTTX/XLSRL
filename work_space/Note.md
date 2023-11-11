@@ -10,22 +10,24 @@ bazel build -c opt //xls/...
 
 ./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./work_space/instruct.json ./work_space/my_test.opt.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
 
-# To Run with python generated json file:
-
-## Without SDC:
-./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./third_party/graph_extraction/test_ins.json ./work_space/my_test.opt.ir
-
-## With SDC:
-./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./third_party/graph_extraction/test_ins.json ./work_space/my_test.opt.ir --clock_period_ps=3500 --delay_model=sky130 > ./work_space/my_test_schedule.txt
-
 
 ## To run unit tests with python generated instruction files
 
-## Without SDC:
 ./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir
 
-## With SDC:
-./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
+# CodeGenSDC test
+
+./bazel-bin/xls/tools/codegen_main ./work_space/test.opt.ir \
+  --generator=pipeline \
+  --pipeline_stages=5 \
+  --delay_model="sky130" \
+  --module_name=xls_test \
+  --top=matrix_multiply \
+  --output_verilog_path=./work_space/test.v \
+  --output_schedule_path=./work_space/codegen_schedule.txt \
+  --output_schedule_ir_path=./work_space/codegen_schedule.ir
+
+
 
 # ==================================================
 
@@ -44,11 +46,14 @@ bazel build -c opt //xls/...
 ./bazel-bin/xls/tools/opt_main ./work_space/test.ir > ./work_space/test.opt.ir
 
 ./bazel-bin/xls/tools/codegen_main ./work_space/test.opt.ir \
-  --generator=combinational \
-  --delay_model="unit" \
-  --output_verilog_path=./work_space/test.v \
+  --generator=pipeline \
+  --pipeline_stages=5 \
+  --delay_model="sky130" \
   --module_name=xls_test \
-  --top=add3
+  --top=matrix_multiply \
+  --output_verilog_path=./work_space/test.v \
+  --output_schedule_path=./work_space/codegen_schedule.txt \
+  --output_schedule_ir_path=./work_space/codegen_schedule.ir
 
 
  ./bazel-bin/xls/tools/codegen_main ./work_space/test.opt.ir \
@@ -61,7 +66,7 @@ bazel build -c opt //xls/...
   --flop_inputs=true \
   --flop_outputs=true
 
-## Scheduling Probelm
+## Jit Scheduler
 
 bazel run -c opt //xls/tools:benchmark_main -- $PWD/bazel-bin/xls/examples/crc32.opt.ir --clock_period_ps=1000 --delay_model=sky130
 
@@ -73,6 +78,8 @@ bazel run -c opt //xls/visualization/ir_viz:app -- --delay_model=unit
 # To get ir-python graph(Deprecated)
 
 bazel run //third_party/graph_extraction:graph_extraction -- /home/miao/xls/work_space/my_test.opt.ir test_unroll
+
+
 
 # Unit tests(Deprecated)
 
@@ -87,3 +94,22 @@ bazel run //third_party/graph_extraction:graph_extraction -- /home/miao/xls/work
 ## DistributeMultOverAdd
 
 ./bazel-bin/xls/tools/RL_main ./work_space/UnitTests/DistributeMultOverAddUnitTest.opt.ir ./work_space/UnitTests/DistributeMultOverAddUnitTest.json > ./work_space/UnitTests/DistributeMultOverAddUnitTest.rewrite.ir
+
+
+
+# To Run with python generated json file: (Not Recommended)
+
+## Without SDC:
+./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./third_party/graph_extraction/test_ins.json ./work_space/my_test.opt.ir
+
+## With SDC:
+./bazel-bin/xls/tools/RL_main ./work_space/test.opt.ir ./third_party/graph_extraction/test_ins.json ./work_space/my_test.opt.ir --clock_period_ps=3500 --delay_model=sky130 > ./work_space/my_test_schedule.txt
+
+
+## To run unit tests with python generated instruction files
+
+## Without SDC:
+./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir
+
+## With SDC:
+./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt

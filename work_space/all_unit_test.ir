@@ -60,3 +60,9 @@ fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits
   concat.25: bits[16] = concat(x11, y11, z11, v11, id=25)
   ret not.26: bits[16] = not(concat.25, id=26)
 }
+
+fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
+  add.27: bits[32] = add(z12, x12, id=27)
+  add.28: bits[32] = add(add.27, y12, id=28)
+  ret add.29: bits[32] = add(add.28, y12, id=29)
+}

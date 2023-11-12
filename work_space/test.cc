@@ -1,28 +1,28 @@
-#define N 8 // Define matrix size, e.g., 8x8
+// #define N 8 // Define matrix size, e.g., 8x8
 
-#pragma hls_top
-void matrix_multiply(int a[N][N], int b[N][N], int result[N][N]) {
-  // Initialize the result matrix
-  #pragma hls_unroll yes
-  for (int i = 0; i < N; i++) {
-    #pragma hls_unroll yes
-    for (int j = 0; j < N; j++) {
-      result[i][j] = 0;
-    }
-  }
+// #pragma hls_top
+// void matrix_multiply(int a[N][N], int b[N][N], int result[N][N]) {
+//   // Initialize the result matrix
+//   #pragma hls_unroll yes
+//   for (int i = 0; i < N; i++) {
+//     #pragma hls_unroll yes
+//     for (int j = 0; j < N; j++) {
+//       result[i][j] = 0;
+//     }
+//   }
 
-  // Perform matrix multiplication
-  #pragma hls_unroll yes
-  for (int i = 0; i < N; i++) {
-    #pragma hls_unroll yes
-    for (int j = 0; j < N; j++) {
-      #pragma hls_unroll yes
-      for (int k = 0; k < N; k++) {
-        result[i][j] += a[i][k] * b[k][j];
-      }
-    }
-  }
-}
+//   // Perform matrix multiplication
+//   #pragma hls_unroll yes
+//   for (int i = 0; i < N; i++) {
+//     #pragma hls_unroll yes
+//     for (int j = 0; j < N; j++) {
+//       #pragma hls_unroll yes
+//       for (int k = 0; k < N; k++) {
+//         result[i][j] += a[i][k] * b[k][j];
+//       }
+//     }
+//   }
+// }
 
 
 // int test_add(int a, int b){
@@ -38,4 +38,15 @@ void matrix_multiply(int a[N][N], int b[N][N], int result[N][N]) {
 //   return ret;
 // }
 
+#pragma hls_top
+void e_graph_test(int x, int y, int z, int a, int b, int c, int Result[2]) {
+  Result[0] = 0;
+  Result[1] = 0;
+  int A = x + y;
+  int B = A + z;
+  int C = b * B + B + A * c;
+  int D = b - c + A * B + C + (-a);
+  Result[0] = A + B + C + D;
+  Result[1] = a + c + C + D;
+}
 

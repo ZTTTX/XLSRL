@@ -41,6 +41,8 @@ private:
     absl::Status HandlekSub(const JsonNode& node);
     absl::Status HandlekUMul(const JsonNode& node);
     absl::Status HandlekSMul(const JsonNode& node);
+    absl::Status HandlekUDiv(const JsonNode& node);
+    absl::Status HandlekSDiv(const JsonNode& node);
     absl::Status HandleLiteral(const JsonNode& node);
     absl::Status HandlekNeg(const JsonNode& node);
     absl::Status HandlekShll(const JsonNode& node);

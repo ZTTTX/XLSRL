@@ -125,6 +125,8 @@ void NodeHandler::InitializeHandlerMap() {
     handler_map_["kSub"] = [this](const JsonNode& node) { return this->HandlekSub(node);};
     handler_map_["kUMul"] = [this](const JsonNode& node) { return this->HandlekUMul(node);};
     handler_map_["kSMul"] = [this](const JsonNode& node) { return this->HandlekSMul(node);};
+    handler_map_["kUDiv"] = [this](const JsonNode& node) { return this->HandlekUMul(node);};
+    handler_map_["kSDiv"] = [this](const JsonNode& node) { return this->HandlekUMul(node);};
     handler_map_["Literal"] = [this](const JsonNode& node) { return this->HandleLiteral(node);};
     handler_map_["kNeg"] = [this](const JsonNode& node) { return this->HandlekNeg(node);};
     handler_map_["kShll"] = [this](const JsonNode& node) { return this->HandlekShll(node);};
@@ -205,10 +207,10 @@ absl::Status NodeHandler::HandlekUMul(const JsonNode& node) {
 }
 
 absl::Status NodeHandler::HandlekSMul(const JsonNode& node) {
-    //Generates a kUMul node, bitwidth must be specified.
+    //Generates a kSMul node, bitwidth must be specified.
     const auto& operands = node.Operands;
     if (operands.size() != 2) {
-        return absl::InvalidArgumentError("Expected two operands for kUMul operation.");
+        return absl::InvalidArgumentError("Expected two operands for kSMul operation.");
     }  
     Node* operand1;
     Node* operand2;
@@ -223,6 +225,52 @@ absl::Status NodeHandler::HandlekSMul(const JsonNode& node) {
         operand2 = NodeMap_[node.Operands[1]];
     }
     XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<ArithOp>(operand2->loc(), operand1, operand2, node.BitWidth, Op::kSMul));
+    NodeMap_[node.OperationName] = NewNode;
+    return absl::OkStatus();
+}
+
+absl::Status NodeHandler::HandlekUDiv(const JsonNode& node) {
+    //Generates a kUDiv node, bitwidth must be specified.
+    const auto& operands = node.Operands;
+    if (operands.size() != 2) {
+        return absl::InvalidArgumentError("Expected two operands for kUDiv operation.");
+    }  
+    Node* operand1;
+    Node* operand2;
+    if (CurFunc_->GetNode(node.Operands[0]).ok()) {
+        XLS_ASSIGN_OR_RETURN(operand1, CurFunc_->GetNode(node.Operands[0]));
+    } else {
+        operand1 = NodeMap_[node.Operands[0]];
+    }
+    if (CurFunc_->GetNode(node.Operands[1]).ok()) {
+        XLS_ASSIGN_OR_RETURN(operand2, CurFunc_->GetNode(node.Operands[1]));
+    } else {
+        operand2 = NodeMap_[node.Operands[1]];
+    }
+    XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<ArithOp>(operand2->loc(), operand1, operand2, node.BitWidth, Op::kUDiv));
+    NodeMap_[node.OperationName] = NewNode;
+    return absl::OkStatus();
+}
+
+absl::Status NodeHandler::HandlekSDiv(const JsonNode& node) {
+    //Generates a kSDiv node, bitwidth must be specified.
+    const auto& operands = node.Operands;
+    if (operands.size() != 2) {
+        return absl::InvalidArgumentError("Expected two operands for kSDiv operation.");
+    }  
+    Node* operand1;
+    Node* operand2;
+    if (CurFunc_->GetNode(node.Operands[0]).ok()) {
+        XLS_ASSIGN_OR_RETURN(operand1, CurFunc_->GetNode(node.Operands[0]));
+    } else {
+        operand1 = NodeMap_[node.Operands[0]];
+    }
+    if (CurFunc_->GetNode(node.Operands[1]).ok()) {
+        XLS_ASSIGN_OR_RETURN(operand2, CurFunc_->GetNode(node.Operands[1]));
+    } else {
+        operand2 = NodeMap_[node.Operands[1]];
+    }
+    XLS_ASSIGN_OR_RETURN(Node* NewNode, CurFunc_->MakeNode<ArithOp>(operand2->loc(), operand1, operand2, node.BitWidth, Op::kSDiv));
     NodeMap_[node.OperationName] = NewNode;
     return absl::OkStatus();
 }

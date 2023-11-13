@@ -70,6 +70,39 @@
                 "ArraySize": null,
                 "Indices": null,
                 "ReplaceSelfWith": "auto_gen2"
+            },
+            {
+                "OperationName": "literal.100",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 100,
+                "Value": 4,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.10",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.9",
+                    "a"
+                ],
+                "idNum": 10,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
             }
         ]
     },
@@ -133,6 +166,24 @@
                 "ArraySize": null,
                 "Indices": null,
                 "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "add.35",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.9",
+                    "a"
+                ],
+                "idNum": 35,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
             }
         ]
     },
@@ -225,6 +276,50 @@
                 "ArraySize": null,
                 "Indices": null,
                 "ReplaceSelfWith": "auto_gen3"
+            },
+            {
+                "OperationName": "add.8",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.7",
+                    "z"
+                ],
+                "idNum": 8,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    44,
+                    4
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.7",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "x",
+                    "y"
+                ],
+                "idNum": 7,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    43,
+                    4
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
             }
         ]
     }

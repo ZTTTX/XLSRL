@@ -1,0 +1,20 @@
+package my_package
+
+file_number 1 "././work_space/test.cc"
+
+top fn e_graph_test(x: bits[32], y: bits[32], z: bits[32], a: bits[32], b: bits[32], c: bits[32]) -> bits[32] {
+  add.111: bits[32] = add(x, y, id=111)
+  literal.110: bits[32] = literal(value=2, id=110, pos=[(1,43,4)])
+  umul.112: bits[32] = umul(add.111, literal.110, id=112, pos=[(1,43,4)])
+  add.113: bits[32] = add(z, umul.112, id=113, pos=[(1,43,4)])
+  add.7: bits[32] = add(x, y, id=7, pos=[(1,43,4)])
+  add.104: bits[32] = add(add.113, a, id=104)
+  literal.103: bits[32] = literal(value=4, id=103)
+  add.107: bits[32] = add(add.113, a, id=107)
+  add.8: bits[32] = add(add.7, z, id=8, pos=[(1,44,4)])
+  add.35: bits[32] = add(add.113, a, id=35)
+  add.10: bits[32] = add(add.113, a, id=10)
+  literal.100: bits[32] = literal(value=4, id=100)
+  add.105: bits[32] = add(add.104, literal.103, id=105)
+  ret add.108: bits[32] = add(add.107, c, id=108)
+}

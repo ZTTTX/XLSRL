@@ -8,6 +8,7 @@ top fn e_graph_test(x: bits[32], y: bits[32], z: bits[32], a: bits[32], b: bits[
   add.9: bits[32] = add(add.8, add.7, id=9)
   add.35: bits[32] = add(add.9, a, id=35)
   add.10: bits[32] = add(add.9, a, id=10)
-  add.11: bits[32] = add(add.10, b, id=11)
+  literal.100: bits[32] = literal(value=4, id=100)
+  add.11: bits[32] = add(add.10, literal.100, id=11)
   ret add.36: bits[32] = add(add.35, c, id=36, pos=[(1,47,4)])
 }

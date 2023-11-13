@@ -1,0 +1,231 @@
+{
+    "0": {
+        "FuncName": "e_graph_test",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "add.9",
+                    "a"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen2",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 4,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen0",
+                    "auto_gen2"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.11",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.10",
+                    "literal.100"
+                ],
+                "idNum": 11,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen2"
+            }
+        ]
+    },
+    "1": {
+        "FuncName": "e_graph_test",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "add.9",
+                    "a"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen0",
+                    "c"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.36",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.35",
+                    "c"
+                ],
+                "idNum": 36,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    47,
+                    4
+                ],
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            }
+        ]
+    },
+    "2": {
+        "FuncName": "e_graph_test",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "x",
+                    "y"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen2",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 2,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "kUMul",
+                "Operands": [
+                    "auto_gen0",
+                    "auto_gen2"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen3",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "z",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.9",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.8",
+                    "add.7"
+                ],
+                "idNum": 9,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen3"
+            }
+        ]
+    }
+}

@@ -239,7 +239,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 1,
+                "Value": 2,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -251,7 +251,7 @@
             {
                 "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kShll",
+                "OperationType": "kUMul",
                 "Operands": [
                     "x4",
                     "auto_gen1"
@@ -567,7 +567,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 1,
+                "Value": 2,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -579,7 +579,7 @@
             {
                 "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kShll",
+                "OperationType": "kUMul",
                 "Operands": [
                     "x8",
                     "auto_gen1"
@@ -897,6 +897,23 @@
         "FuncName": "NotOverConcat",
         "NodesInvolved": [
             {
+                "OperationName": "auto_gen0",
+                "BitWidth": 16,
+                "OperationType": "kNot",
+                "Operands": [
+                    "concat.25"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
                 "OperationName": "not.26",
                 "BitWidth": 16,
                 "OperationType": "not",
@@ -911,7 +928,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen-1"
+                "ReplaceSelfWith": "auto_gen0"
             }
         ]
     },
@@ -942,7 +959,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 1,
+                "Value": 2,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -954,7 +971,7 @@
             {
                 "OperationName": "auto_gen1",
                 "BitWidth": 32,
-                "OperationType": "kShll",
+                "OperationType": "kUMul",
                 "Operands": [
                     "y12",
                     "auto_gen2"

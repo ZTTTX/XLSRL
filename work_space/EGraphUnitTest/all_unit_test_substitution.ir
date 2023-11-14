@@ -3,63 +3,68 @@ package my_package
 file_number 1 "././work_space/test.cc"
 
 top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
-  add.54: bits[32] = add(z1, x1, id=54)
-  ret add.55: bits[32] = add(add.54, y1, id=55)
+  add.60: bits[32] = add(z1, x1, id=60)
+  ret add.61: bits[32] = add(add.60, y1, id=61)
 }
 
 fn Unsigned_MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
-  umul.58: bits[32] = umul(z2, x2, id=58)
-  ret umul.59: bits[32] = umul(umul.58, y2, id=59)
+  umul.64: bits[32] = umul(z2, x2, id=64)
+  ret umul.65: bits[32] = umul(umul.64, y2, id=65)
 }
 
 fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
-  add.62: bits[32] = add(z3, x3, id=62)
-  ret umul.63: bits[32] = umul(add.62, y3, id=63)
+  add.68: bits[32] = add(z3, x3, id=68)
+  ret umul.69: bits[32] = umul(add.68, y3, id=69)
 }
 
 fn SumSame(x4: bits[32]) -> bits[32] {
-  ret literal.66: bits[32] = literal(value=1, id=66)
-  shll.67: bits[32] = shll(x4, literal.66, id=67)
+  ret literal.72: bits[32] = literal(value=2, id=72)
+  umul.73: bits[32] = umul(x4, literal.72, id=73)
 }
 
 fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] {
-  umul.73: bits[32] = umul(x5, y5, id=73)
-  umul.69: bits[32] = umul(x5, y5, id=69)
-  add.74: bits[32] = add(umul.73, z5, id=74)
-  ret add.70: bits[32] = add(y5, umul.69, id=70)
+  umul.79: bits[32] = umul(x5, y5, id=79)
+  umul.75: bits[32] = umul(x5, y5, id=75)
+  add.80: bits[32] = add(umul.79, z5, id=80)
+  ret add.76: bits[32] = add(y5, umul.75, id=76)
 }
 
 fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32] {
-  smul.77: bits[32] = smul(z6, x6, id=77)
-  ret smul.78: bits[32] = smul(smul.77, y6, id=78)
+  smul.83: bits[32] = smul(z6, x6, id=83)
+  ret smul.84: bits[32] = smul(smul.83, y6, id=84)
 }
 
 fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
-  ret sub.81: bits[32] = sub(x7, y7, id=81)
+  ret sub.87: bits[32] = sub(x7, y7, id=87)
 }
 
 fn MulByTwo(x8: bits[32]) -> bits[32] {
-  ret literal.83: bits[32] = literal(value=1, id=83)
-  literal.87: bits[32] = literal(value=4, id=87)
-  shll.84: bits[32] = shll(x8, literal.83, id=84)
-  umul.88: bits[32] = umul(x8, literal.87, id=88)
+  ret literal.89: bits[32] = literal(value=2, id=89)
+  literal.93: bits[32] = literal(value=4, id=93)
+  umul.90: bits[32] = umul(x8, literal.89, id=90)
+  umul.94: bits[32] = umul(x8, literal.93, id=94)
 }
 
 fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
-  add.91: bits[32] = add(y9, z9, id=91)
-  add.95: bits[32] = add(y9, z9, id=95)
-  shll.92: bits[32] = shll(x9, add.91, id=92)
-  shll.96: bits[32] = shll(x9, add.95, id=96)
+  add.97: bits[32] = add(y9, z9, id=97)
+  add.101: bits[32] = add(y9, z9, id=101)
+  shll.98: bits[32] = shll(x9, add.97, id=98)
+  shll.102: bits[32] = shll(x9, add.101, id=102)
   ret literal.23: bits[32] = literal(value=1, id=23)
 }
 
 fn NegToNot(x10: bits[32]) -> bits[32] {
-  ret neg.99: bits[32] = neg(x10, id=99)
+  ret neg.105: bits[32] = neg(x10, id=105)
+}
+
+fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits[16] {
+  concat.25: bits[16] = concat(x11, y11, z11, v11, id=25)
+  ret not.107: bits[16] = not(concat.25, id=107)
 }
 
 fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
-  literal.101: bits[32] = literal(value=1, id=101)
-  add.102: bits[32] = add(z12, x12, id=102)
-  shll.103: bits[32] = shll(y12, literal.101, id=103)
-  ret add.104: bits[32] = add(add.102, shll.103, id=104)
+  literal.109: bits[32] = literal(value=2, id=109)
+  add.110: bits[32] = add(z12, x12, id=110)
+  umul.111: bits[32] = umul(y12, literal.109, id=111)
+  ret add.112: bits[32] = add(add.110, umul.111, id=112)
 }

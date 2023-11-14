@@ -15,7 +15,7 @@ stages {
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "add.54"
+    node: "add.60"
     node_delay_ps: 853
     path_delay_ps: 853
   }
@@ -28,7 +28,7 @@ stages {
 stages {
   stage: 1
   timed_nodes {
-    node: "add.55"
+    node: "add.61"
     node_delay_ps: 853
     path_delay_ps: 853
   }

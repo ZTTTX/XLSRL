@@ -1,0 +1,84 @@
+package my_package
+
+file_number 1 "././work_space/test.cc"
+
+top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
+  add.54: bits[32] = add(z1, x1, id=54)
+  ret add.55: bits[32] = add(add.54, y1, id=55)
+}
+
+fn Unsigned_MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
+  umul.58: bits[32] = umul(z2, x2, id=58)
+  ret umul.59: bits[32] = umul(umul.58, y2, id=59)
+}
+
+fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
+  add.62: bits[32] = add(z3, x3, id=62)
+  ret umul.63: bits[32] = umul(add.62, y3, id=63)
+}
+
+fn SumSame(x4: bits[32]) -> bits[32] {
+  ret literal.66: bits[32] = literal(value=1, id=66)
+}
+
+fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] {
+  umul.69: bits[32] = umul(x5, y5, id=69)
+  ret add.70: bits[32] = add(y5, umul.69, id=70)
+}
+
+fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32] {
+  smul.77: bits[32] = smul(z6, x6, id=77)
+  ret smul.78: bits[32] = smul(smul.77, y6, id=78)
+}
+
+fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
+  ret sub.81: bits[32] = sub(x7, y7, id=81)
+}
+
+fn MulByTwo(x8: bits[32]) -> bits[32] {
+  ret literal.83: bits[32] = literal(value=1, id=83)
+}
+
+fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
+  ret literal.23: bits[32] = literal(value=1, id=23)
+}
+
+fn NegToNot(x10: bits[32]) -> bits[32] {
+  ret neg.99: bits[32] = neg(x10, id=99)
+}
+
+fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
+  add.102: bits[32] = add(z12, x12, id=102)
+  bit_slice.111: bits[31] = bit_slice(add.102, start=1, width=31, id=111)
+  bit_slice.109: bits[31] = bit_slice(y12, start=0, width=31, id=109)
+  add.113: bits[31] = add(bit_slice.111, bit_slice.109, id=113)
+  bit_slice.114: bits[1] = bit_slice(add.102, start=0, width=1, id=114)
+  ret concat.115: bits[32] = concat(add.113, bit_slice.114, id=115)
+}
+
+block xls_test(clk: clock, x1: bits[32], y1: bits[32], z1: bits[32], out: bits[32]) {
+  reg p0_x1(bits[32])
+  reg p0_y1(bits[32])
+  reg p0_z1(bits[32])
+  reg p1_y1(bits[32])
+  reg p1_add_126(bits[32])
+  reg p2_add_131(bits[32])
+  x1: bits[32] = input_port(name=x1, id=118)
+  y1: bits[32] = input_port(name=y1, id=119)
+  z1: bits[32] = input_port(name=z1, id=117)
+  register_write.120: () = register_write(x1, register=p0_x1, id=120)
+  register_write.122: () = register_write(y1, register=p0_y1, id=122)
+  register_write.124: () = register_write(z1, register=p0_z1, id=124)
+  p0_x1: bits[32] = register_read(register=p0_x1, id=121)
+  p0_y1: bits[32] = register_read(register=p0_y1, id=123)
+  p0_z1: bits[32] = register_read(register=p0_z1, id=125)
+  add.126: bits[32] = add(p0_z1, p0_x1, id=126)
+  register_write.127: () = register_write(p0_y1, register=p1_y1, id=127)
+  register_write.129: () = register_write(add.126, register=p1_add_126, id=129)
+  p1_y1: bits[32] = register_read(register=p1_y1, id=128)
+  p1_add_126: bits[32] = register_read(register=p1_add_126, id=130)
+  add.131: bits[32] = add(p1_add_126, p1_y1, id=131)
+  register_write.132: () = register_write(add.131, register=p2_add_131, id=132)
+  p2_add_131: bits[32] = register_read(register=p2_add_131, id=133)
+  out: () = output_port(p2_add_131, name=out, id=134)
+}

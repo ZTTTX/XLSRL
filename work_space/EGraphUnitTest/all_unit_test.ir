@@ -1,0 +1,68 @@
+package my_package
+
+file_number 1 "././work_space/test.cc"
+
+top fn AddAssociativity(x1: bits[32], y1: bits[32], z1: bits[32]) -> bits[32] {
+  add.1: bits[32] = add(z1, x1, id=1)
+  ret add.2: bits[32] = add(add.1, y1, id=2)
+}
+
+fn Unsigned_MulAssociativity(x2: bits[32], y2: bits[32], z2: bits[32]) -> bits[32] {
+  umul.3: bits[32] = umul(z2, x2, id=3)
+  ret umul.4: bits[32] = umul(umul.3, y2, id=4)
+}
+
+fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
+  add.5: bits[32] = add(z3, x3, id=5)
+  ret umul.6: bits[32] = umul(add.5, y3, id=6)
+}
+
+fn SumSame(x4: bits[32]) -> bits[32] { 
+  ret add.7: bits[32] = add(x4, x4, id=7)
+}
+
+fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] { 
+  umul.8: bits[32] = umul(x5, y5, id=8)
+  add.9: bits[32] = add(umul.8, z5, id=9)
+  umul.10: bits[32] = umul(x5, y5, id=10)
+  ret add.11: bits[32] = add(umul.10, y5, id=11)
+}
+
+fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32] {
+  smul.12: bits[32] = smul(z6, x6, id=12)
+  ret smul.13: bits[32] = smul(smul.12, y6, id=13)
+}
+
+fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] { 
+  ret sub.14: bits[32] = sub(x7, y7, id=14)
+}
+
+fn MulByTwo(x8: bits[32]) -> bits[32] { 
+  literal.15: bits[8] = literal(value=4, id=15)
+  umul.16: bits[32] = umul(x8, literal.15, id=16)
+  literal.17: bits[2] = literal(value=2, id=17)
+  ret umul.18: bits[32] = umul(x8, literal.17, id=18)
+}
+
+fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
+  shll.19: bits[32] = shll(x9, y9, id=19)
+  shll.20: bits[32] = shll(shll.19, z9, id=20)
+  shrl.21: bits[32] = shrl(x9, y9, id=21)
+  shrl.22: bits[32] = shrl(shrl.21, z9, id=22)
+  ret literal.23: bits[32] = literal(value=1, id=23)
+}
+
+fn NegToNot(x10: bits[32]) -> bits[32] {
+  ret neg.24: bits[32] = neg(x10, id=24)
+}
+
+fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits[16] {
+  concat.25: bits[16] = concat(x11, y11, z11, v11, id=25)
+  ret not.26: bits[16] = not(concat.25, id=26)
+}
+
+fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
+  add.27: bits[32] = add(z12, x12, id=27)
+  add.28: bits[32] = add(add.27, y12, id=28)
+  ret add.29: bits[32] = add(add.28, y12, id=29)
+}

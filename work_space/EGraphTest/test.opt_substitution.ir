@@ -4,9 +4,9 @@ file_number 1 "././work_space/test.cc"
 
 top fn e_graph_test(x: bits[32], y: bits[32], z: bits[32], a: bits[32], b: bits[32], c: bits[32]) -> bits[32] {
   add.114: bits[32] = add(x, y, id=114)
-  literal.113: bits[32] = literal(value=2, id=113, pos=[(1,43,4)])
-  umul.115: bits[32] = umul(add.114, literal.113, id=115, pos=[(1,43,4)])
-  add.116: bits[32] = add(z, umul.115, id=116, pos=[(1,43,4)])
+  literal.113: bits[32] = literal(value=1, id=113, pos=[(1,43,4)])
+  shll.115: bits[32] = shll(add.114, literal.113, id=115, pos=[(1,43,4)])
+  add.116: bits[32] = add(z, shll.115, id=116, pos=[(1,43,4)])
   add.104: bits[32] = add(add.116, a, id=104)
   literal.103: bits[32] = literal(value=4, id=103)
   add.109: bits[32] = add(add.116, a, id=109)

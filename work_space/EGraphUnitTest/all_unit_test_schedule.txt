@@ -1,0 +1,35 @@
+# proto-file: xls/scheduling/pipeline_schedule.proto
+# proto-message: PipelineScheduleProto
+
+function: "AddAssociativity"
+stages {
+  stage: 0
+  timed_nodes {
+    node: "z1"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "x1"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.54"
+    node_delay_ps: 853
+    path_delay_ps: 853
+  }
+  timed_nodes {
+    node: "y1"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+}
+stages {
+  stage: 1
+  timed_nodes {
+    node: "add.55"
+    node_delay_ps: 853
+    path_delay_ps: 853
+  }
+}

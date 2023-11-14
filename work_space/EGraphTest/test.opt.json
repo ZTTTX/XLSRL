@@ -214,7 +214,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 2,
+                "Value": 1,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -226,7 +226,7 @@
             {
                 "OperationName": "auto_gen1",
                 "BitWidth": 32,
-                "OperationType": "kUMul",
+                "OperationType": "kShll",
                 "Operands": [
                     "auto_gen0",
                     "auto_gen2"

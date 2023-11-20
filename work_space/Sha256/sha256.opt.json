@@ -1,0 +1,768 @@
+{
+    "0": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 4499313376,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "xor.18769",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen2",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "bit_slice.16223",
+                    "auto_gen0"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen3",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.30243",
+                    "auto_gen2"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.37936",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.37949",
+                    "literal.51596"
+                ],
+                "idNum": 37936,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen3"
+            },
+            {
+                "OperationName": "literal.51596",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51596,
+                "Value": 3144134277,
+                "Pos": [
+                    1,
+                    131,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.37949",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.37947",
+                    "add.37948"
+                ],
+                "idNum": 37949,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.37948",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.16223",
+                    "literal.37955"
+                ],
+                "idNum": 37948,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "literal.37955",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 37955,
+                "Value": 1355179099,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.37947",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.30243",
+                    "xor.18769"
+                ],
+                "idNum": 37947,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "1": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 31,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 506952121,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "bit_slice.51189",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.51191",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.51189",
+                    "literal.51367"
+                ],
+                "idNum": 51191,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "literal.51367",
+                "BitWidth": 31,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51367,
+                "Value": 506952121,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "2": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.30167",
+                    "xor.18704"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen0",
+                    "concat.51188"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.37953",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.37951",
+                    "concat.51188"
+                ],
+                "idNum": 37953,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "add.37951",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.30167",
+                    "xor.18704"
+                ],
+                "idNum": 37951,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "3": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kNot",
+                "Operands": [
+                    "add.51181"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.51580",
+                "BitWidth": 31,
+                "OperationType": "not",
+                "Operands": [
+                    "add.51181"
+                ],
+                "idNum": 51580,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    78,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "4": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 31,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1386740381,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.51540",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.51181",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.51540",
+                    "literal.51365"
+                ],
+                "idNum": 51181,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "literal.51365",
+                "BitWidth": 31,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51365,
+                "Value": 1386740381,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "5": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 30,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 246483849,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 30,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "bit_slice.51545",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.51196",
+                "BitWidth": 30,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.51545",
+                    "literal.51368"
+                ],
+                "idNum": 51196,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "literal.51368",
+                "BitWidth": 30,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51368,
+                "Value": 246483849,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "6": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 30,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 607045519,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 30,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "bit_slice.51543",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.51186",
+                "BitWidth": 30,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.51543",
+                    "literal.51366"
+                ],
+                "idNum": 51186,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "literal.51366",
+                "BitWidth": 30,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51366,
+                "Value": 607045519,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "7": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "bit_slice.51564"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.51578",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "bit_slice.51564"
+                ],
+                "idNum": 51578,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    78,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "8": {
+        "FuncName": "sha256main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 29,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 510590381,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 29,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "bit_slice.51537",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.51176",
+                "BitWidth": 29,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.51537",
+                    "literal.51364"
+                ],
+                "idNum": 51176,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen1"
+            },
+            {
+                "OperationName": "literal.51364",
+                "BitWidth": 29,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 51364,
+                "Value": 510590381,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    }
+}

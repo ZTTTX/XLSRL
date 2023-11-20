@@ -99,6 +99,7 @@
         "rope": "cpp",
         "slist": "cpp",
         "cfenv": "cpp",
-        "scoped_allocator": "cpp"
+        "scoped_allocator": "cpp",
+        "execution": "cpp"
     }
 }

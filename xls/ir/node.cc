@@ -740,6 +740,7 @@ absl::Status Node::ReplaceUsesWith(Node* replacement) {
       << " replacement: " << replacement->GetType()->ToString();
   std::vector<Node*> orig_users(users().begin(), users().end());
   for (Node* user : orig_users) {
+    // std::cout << user->GetName() << std::endl;
     XLS_RET_CHECK(user->ReplaceOperand(this, replacement));
   }
 

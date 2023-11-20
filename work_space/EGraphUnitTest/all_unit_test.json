@@ -8,7 +8,7 @@
                 "OperationType": "kAdd",
                 "Operands": [
                     "z1",
-                    "x1"
+                    "y1"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -25,8 +25,8 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "auto_gen0",
-                    "y1"
+                    "x1",
+                    "auto_gen0"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -85,7 +85,7 @@
                 "OperationType": "kUMul",
                 "Operands": [
                     "z2",
-                    "x2"
+                    "y2"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -102,8 +102,8 @@
                 "BitWidth": 32,
                 "OperationType": "kUMul",
                 "Operands": [
-                    "auto_gen0",
-                    "y2"
+                    "x2",
+                    "auto_gen0"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -434,7 +434,7 @@
                 "OperationType": "kSMul",
                 "Operands": [
                     "z6",
-                    "x6"
+                    "y6"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -451,8 +451,8 @@
                 "BitWidth": 32,
                 "OperationType": "kSMul",
                 "Operands": [
-                    "auto_gen0",
-                    "y6"
+                    "x6",
+                    "auto_gen0"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -552,7 +552,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 2,
+                "Value": 1,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -564,7 +564,7 @@
             {
                 "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kUMul",
+                "OperationType": "kShll",
                 "Operands": [
                     "x8",
                     "auto_gen1"
@@ -595,7 +595,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.17",
@@ -666,7 +666,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.15",
@@ -921,15 +921,12 @@
         "FuncName": "CoreDump",
         "NodesInvolved": [
             {
-                "OperationName": "auto_gen0",
+                "OperationName": "auto_gen1",
                 "BitWidth": 32,
-                "OperationType": "kAdd",
-                "Operands": [
-                    "z12",
-                    "x12"
-                ],
+                "OperationType": "Literal",
+                "Operands": null,
                 "idNum": null,
-                "Value": -1,
+                "Value": 1,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -939,12 +936,12 @@
                 "ReplaceSelfWith": "Gen"
             },
             {
-                "OperationName": "auto_gen1",
+                "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kAdd",
+                "OperationType": "kShll",
                 "Operands": [
                     "y12",
-                    "y12"
+                    "auto_gen1"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -961,8 +958,26 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "auto_gen0",
-                    "auto_gen1"
+                    "x12",
+                    "auto_gen0"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen3",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "z12",
+                    "auto_gen2"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -990,7 +1005,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen2"
+                "ReplaceSelfWith": "auto_gen3"
             },
             {
                 "OperationName": "add.28",
@@ -1027,6 +1042,241 @@
                 "ArraySize": null,
                 "Indices": null,
                 "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "15": {
+        "FuncName": "MoreThanOneRef",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 64,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.32",
+                    "concat.33"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.34",
+                "BitWidth": 64,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.32",
+                    "concat.33"
+                ],
+                "idNum": 34,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "16": {
+        "FuncName": "MoreThanOneRef",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "add.30",
+                    "y13"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.31",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.30",
+                    "y13"
+                ],
+                "idNum": 31,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "17": {
+        "FuncName": "MoreThanOneRef",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "z13",
+                    "x13"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.30",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "z13",
+                    "x13"
+                ],
+                "idNum": 30,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "18": {
+        "FuncName": "UnsupportRef",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 123,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "bit_slice.37"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.38",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "literal.36",
+                    "bit_slice.37"
+                ],
+                "idNum": 38,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.36",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 36,
+                "Value": 123,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "19": {
+        "FuncName": "UnsupportRef",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "z14",
+                    "x14"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.35",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "z14",
+                    "x14"
+                ],
+                "idNum": 35,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
             }
         ]
     }

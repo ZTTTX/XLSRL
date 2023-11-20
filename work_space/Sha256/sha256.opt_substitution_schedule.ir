@@ -1,0 +1,17 @@
+package sha256
+
+file_number 0 "xls/dslx/stdlib/std.x"
+file_number 1 "./work_space/Sha256/sha256.x"
+
+top fn sha256main(message: bits[512]) -> bits[30] {
+  ret literal.51689: bits[30] = literal(value=246483849, id=51689, pos=[(1,79,35)])
+}
+
+block xls_test(clk: clock, message: bits[512], out: bits[30]) {
+  reg p1_literal_51817(bits[30])
+  message: bits[512] = input_port(name=message, id=51816)
+  literal.51817: bits[30] = literal(value=246483849, id=51817, pos=[(1,79,35)])
+  register_write.51818: () = register_write(literal.51817, register=p1_literal_51817, id=51818, pos=[(1,79,35)])
+  p1_literal_51817: bits[30] = register_read(register=p1_literal_51817, id=51819, pos=[(1,79,35)])
+  out: () = output_port(p1_literal_51817, name=out, id=51820)
+}

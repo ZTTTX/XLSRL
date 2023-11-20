@@ -17,14 +17,14 @@ fn MulDistribution(x3: bits[32], y3: bits[32], z3: bits[32]) -> bits[32] {
   ret umul.6: bits[32] = umul(add.5, y3, id=6)
 }
 
-fn SumSame(x4: bits[32]) -> bits[32] { 
+fn SumSame(x4: bits[32]) -> bits[32] {
   ret add.7: bits[32] = add(x4, x4, id=7)
 }
 
-fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] { 
+fn MulSumSame(x5: bits[32], y5: bits[32], z5: bits[32]) -> bits[32] {
   umul.8: bits[32] = umul(x5, y5, id=8)
-  add.9: bits[32] = add(umul.8, z5, id=9)
   umul.10: bits[32] = umul(x5, y5, id=10)
+  add.9: bits[32] = add(umul.8, z5, id=9)
   ret add.11: bits[32] = add(umul.10, y5, id=11)
 }
 
@@ -33,21 +33,21 @@ fn Signed_MulAssociativity(x6: bits[32], y6: bits[32], z6: bits[32]) -> bits[32]
   ret smul.13: bits[32] = smul(smul.12, y6, id=13)
 }
 
-fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] { 
+fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
   ret sub.14: bits[32] = sub(x7, y7, id=14)
 }
 
-fn MulByTwo(x8: bits[32]) -> bits[32] { 
+fn MulByTwo(x8: bits[32]) -> bits[32] {
   literal.15: bits[8] = literal(value=4, id=15)
-  umul.16: bits[32] = umul(x8, literal.15, id=16)
   literal.17: bits[2] = literal(value=2, id=17)
+  umul.16: bits[32] = umul(x8, literal.15, id=16)
   ret umul.18: bits[32] = umul(x8, literal.17, id=18)
 }
 
 fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
   shll.19: bits[32] = shll(x9, y9, id=19)
-  shll.20: bits[32] = shll(shll.19, z9, id=20)
   shrl.21: bits[32] = shrl(x9, y9, id=21)
+  shll.20: bits[32] = shll(shll.19, z9, id=20)
   shrl.22: bits[32] = shrl(shrl.21, z9, id=22)
   ret literal.23: bits[32] = literal(value=1, id=23)
 }
@@ -76,8 +76,8 @@ fn MoreThanOneRef(x13: bits[32], y13: bits[32], z13: bits[32]) -> bits[64] {
 }
 
 fn UnsupportRef(x14: bits[32], y14: bits[64], z14: bits[32]) -> bits[32] {
-  add.35: bits[32] = add(z14, x14, id=35)
   literal.36: bits[32] = literal(value=123, id=36)
   bit_slice.37: bits[32] = bit_slice(y14, start=0, width=32, id=37)
+  add.35: bits[32] = add(z14, x14, id=35)
   ret add.38: bits[32] = add(literal.36, bit_slice.37, id=38)
 }

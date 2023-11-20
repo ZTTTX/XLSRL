@@ -20,9 +20,6 @@
 #include <string_view>
 #include <vector>
 
-#include "xls/tools/RewriteHandler.h"
-#include "xls/tools/JsonHandler.h"
-#include "xls/tools/RunScheduler.h"
 #include <fstream>
 
 
@@ -61,6 +58,10 @@ Emit combinational module:
 namespace xls {
 // namespace {
 absl::Status DumpIRToFile(const std::string& ir_content, const std::string& output_file_path) {
+    // Create the output directory if it doesn't exist
+    std::filesystem::path path(output_file_path);
+    std::filesystem::create_directories(path.parent_path());
+
     std::ofstream output_file(output_file_path, std::ios::out | std::ios::trunc);
     if (!output_file.is_open()) {
         return absl::Status(absl::StatusCode::kUnknown, "Failed to open the output file.");
@@ -73,7 +74,7 @@ absl::Status DumpIRToFile(const std::string& ir_content, const std::string& outp
 }
 
 
-absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path, std::string_view out_path, std::vector<std::string_view> positional_arguments) {
+absl::Status UnifyName(std::string_view ir_path, std::string_view out_path) {
   if (ir_path == "-") {
     ir_path = "/dev/stdin";
   }
@@ -84,27 +85,23 @@ absl::Status SingleRewrite(std::string_view ir_path, std::string_view json_path,
   XLS_RET_CHECK(p->GetTop().has_value())
       << "Package " << p->name() << " needs a top function/proc.";
 
-  //Read Json file, related files are JsonHandler.h
-  std::vector<JsonSingleSub> AllSubs;
-  AllSubs = ReadJsonByPath(json_path);
-
-  //Init rewrite handler instance and handle all substitution, dump IR file after done
-  //related files are RewriteHandler.cc and .h
-  
-  for (const JsonSingleSub& CurSub : AllSubs) {
-    XLS_RETURN_IF_ERROR(HandleSingleSub(p.get(), CurSub));
+  // Iterate over all functions in the package
+  for (const auto& function : p->functions()) {
+    // Iterate over all nodes in the function
+    for (Node* node : function->nodes()) {
+      // If the node has a name, clear it
+      if (node->HasAssignedName() && !node->Is<Param>()) {
+        node->ClearName();
+      }
+    }
   }
+
+  // Dump the modified IR to a string
   std::string RewritedIR = p->DumpIr();
   XLS_RETURN_IF_ERROR(DumpIRToFile(RewritedIR, std::string(out_path)));
-
-  //Call Scheduler
-  XLS_RETURN_IF_ERROR(RunScheduler(out_path, positional_arguments));
-
-  //
-
-
   return absl::OkStatus();
 }
+
 
 // }  // namespaceR
 }  // namespace xls
@@ -113,14 +110,13 @@ int main(int argc, char** argv) {
   std::vector<std::string_view> positional_arguments =
       xls::InitXls(kUsage, argc, argv);
 
-  if (positional_arguments.size() < 3) {
+  if (positional_arguments.size() != 2) {
     XLS_LOG(QFATAL) << absl::StreamFormat("Expected invocation: %s IR_FILE",
                                           argv[0]);
   }
   
   std::string_view ir_path = positional_arguments[0];
-  std::string_view json_path = positional_arguments[1];
-  std::string_view out_path = positional_arguments[2];
+  std::string_view out_path = positional_arguments[1];
 
-  return xls::ExitStatus(xls::SingleRewrite(ir_path, json_path, out_path, positional_arguments));
+  return xls::ExitStatus(xls::UnifyName(ir_path, out_path));
 }

@@ -10,8 +10,18 @@ stages {
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "literal.51689"
+    node: "bit_slice.51545"
     node_delay_ps: 0
     path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.51368"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.51196"
+    node_delay_ps: 837
+    path_delay_ps: 837
   }
 }

@@ -552,7 +552,7 @@
                 "OperationType": "Literal",
                 "Operands": null,
                 "idNum": null,
-                "Value": 1,
+                "Value": 2,
                 "Pos": null,
                 "FuncIO": null,
                 "Start": null,
@@ -564,7 +564,7 @@
             {
                 "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kShll",
+                "OperationType": "kUMul",
                 "Operands": [
                     "x8",
                     "auto_gen1"
@@ -921,27 +921,12 @@
         "FuncName": "CoreDump",
         "NodesInvolved": [
             {
-                "OperationName": "auto_gen1",
-                "BitWidth": 32,
-                "OperationType": "Literal",
-                "Operands": null,
-                "idNum": null,
-                "Value": 1,
-                "Pos": null,
-                "FuncIO": null,
-                "Start": null,
-                "Width": null,
-                "ArraySize": null,
-                "Indices": null,
-                "ReplaceSelfWith": "Gen"
-            },
-            {
                 "OperationName": "auto_gen0",
                 "BitWidth": 32,
-                "OperationType": "kShll",
+                "OperationType": "kAdd",
                 "Operands": [
                     "y12",
-                    "auto_gen1"
+                    "y12"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -954,7 +939,7 @@
                 "ReplaceSelfWith": "Gen"
             },
             {
-                "OperationName": "auto_gen2",
+                "OperationName": "auto_gen1",
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
@@ -972,12 +957,12 @@
                 "ReplaceSelfWith": "Gen"
             },
             {
-                "OperationName": "auto_gen3",
+                "OperationName": "auto_gen2",
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
                     "z12",
-                    "auto_gen2"
+                    "auto_gen1"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -1005,7 +990,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen3"
+                "ReplaceSelfWith": "auto_gen2"
             },
             {
                 "OperationName": "add.28",

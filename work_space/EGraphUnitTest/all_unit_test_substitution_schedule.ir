@@ -36,9 +36,9 @@ fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
 }
 
 fn MulByTwo(x8: bits[32]) -> bits[32] {
-  bit_slice.151: bits[31] = bit_slice(x8, start=0, width=31, id=151)
-  literal.150: bits[1] = literal(value=0, id=150)
-  ret concat.152: bits[32] = concat(bit_slice.151, literal.150, id=152)
+  bit_slice.152: bits[31] = bit_slice(x8, start=0, width=31, id=152)
+  literal.151: bits[1] = literal(value=0, id=151)
+  ret concat.153: bits[32] = concat(bit_slice.152, literal.151, id=153)
 }
 
 fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
@@ -50,34 +50,31 @@ fn NegToNot(x10: bits[32]) -> bits[32] {
 }
 
 fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits[16] {
-  not.163: bits[4] = not(x11, id=163)
-  not.161: bits[4] = not(y11, id=161)
-  not.159: bits[4] = not(z11, id=159)
-  not.157: bits[4] = not(v11, id=157)
-  ret concat.164: bits[16] = concat(not.163, not.161, not.159, not.157, id=164)
+  not.164: bits[4] = not(x11, id=164)
+  not.162: bits[4] = not(y11, id=162)
+  not.160: bits[4] = not(z11, id=160)
+  not.158: bits[4] = not(v11, id=158)
+  ret concat.165: bits[16] = concat(not.164, not.162, not.160, not.158, id=165)
 }
 
 fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
-  bit_slice.165: bits[31] = bit_slice(x12, start=1, width=31, id=165)
-  bit_slice.154: bits[31] = bit_slice(y12, start=0, width=31, id=154)
-  add.167: bits[31] = add(bit_slice.165, bit_slice.154, id=167)
-  bit_slice.168: bits[1] = bit_slice(x12, start=0, width=1, id=168)
-  concat.169: bits[32] = concat(add.167, bit_slice.168, id=169)
-  ret add.126: bits[32] = add(z12, concat.169, id=126)
+  add.154: bits[32] = add(z12, x12, id=154)
+  add.155: bits[32] = add(y12, y12, id=155)
+  ret add.156: bits[32] = add(add.154, add.155, id=156)
 }
 
 fn MoreThanOneRef(x13: bits[32], y13: bits[32], z13: bits[32]) -> bits[64] {
-  add.134: bits[32] = add(z13, x13, id=134)
-  add.132: bits[32] = add(add.134, y13, id=132)
-  concat.32: bits[64] = concat(add.134, add.132, id=32)
-  concat.33: bits[64] = concat(add.134, x13, id=33)
-  ret add.130: bits[64] = add(concat.32, concat.33, id=130)
+  add.133: bits[32] = add(z13, x13, id=133)
+  add.131: bits[32] = add(add.133, y13, id=131)
+  concat.32: bits[64] = concat(add.133, add.131, id=32)
+  concat.33: bits[64] = concat(add.133, x13, id=33)
+  ret add.129: bits[64] = add(concat.32, concat.33, id=129)
 }
 
 fn UnsupportRef(x14: bits[32], y14: bits[64], z14: bits[32]) -> bits[32] {
   bit_slice.37: bits[32] = bit_slice(y14, start=0, width=32, id=37)
-  literal.136: bits[32] = literal(value=123, id=136)
-  ret add.149: bits[32] = add(bit_slice.37, literal.136, id=149)
+  literal.135: bits[32] = literal(value=123, id=135)
+  ret add.148: bits[32] = add(bit_slice.37, literal.135, id=148)
 }
 
 block xls_test(clk: clock, x1: bits[32], y1: bits[32], z1: bits[32], out: bits[32]) {
@@ -85,24 +82,24 @@ block xls_test(clk: clock, x1: bits[32], y1: bits[32], z1: bits[32], out: bits[3
   reg p0_y1(bits[32])
   reg p0_z1(bits[32])
   reg p1_x1(bits[32])
-  reg p1_add_184(bits[32])
-  reg p2_add_189(bits[32])
-  x1: bits[32] = input_port(name=x1, id=177)
-  y1: bits[32] = input_port(name=y1, id=176)
-  z1: bits[32] = input_port(name=z1, id=175)
-  register_write.178: () = register_write(x1, register=p0_x1, id=178)
-  register_write.180: () = register_write(y1, register=p0_y1, id=180)
-  register_write.182: () = register_write(z1, register=p0_z1, id=182)
-  p0_x1: bits[32] = register_read(register=p0_x1, id=179)
-  p0_y1: bits[32] = register_read(register=p0_y1, id=181)
-  p0_z1: bits[32] = register_read(register=p0_z1, id=183)
-  add.184: bits[32] = add(p0_z1, p0_y1, id=184)
-  register_write.185: () = register_write(p0_x1, register=p1_x1, id=185)
-  register_write.187: () = register_write(add.184, register=p1_add_184, id=187)
-  p1_x1: bits[32] = register_read(register=p1_x1, id=186)
-  p1_add_184: bits[32] = register_read(register=p1_add_184, id=188)
-  add.189: bits[32] = add(p1_x1, p1_add_184, id=189)
-  register_write.190: () = register_write(add.189, register=p2_add_189, id=190)
-  p2_add_189: bits[32] = register_read(register=p2_add_189, id=191)
-  out: () = output_port(p2_add_189, name=out, id=192)
+  reg p1_add_179(bits[32])
+  reg p2_add_184(bits[32])
+  x1: bits[32] = input_port(name=x1, id=172)
+  y1: bits[32] = input_port(name=y1, id=171)
+  z1: bits[32] = input_port(name=z1, id=170)
+  register_write.173: () = register_write(x1, register=p0_x1, id=173)
+  register_write.175: () = register_write(y1, register=p0_y1, id=175)
+  register_write.177: () = register_write(z1, register=p0_z1, id=177)
+  p0_x1: bits[32] = register_read(register=p0_x1, id=174)
+  p0_y1: bits[32] = register_read(register=p0_y1, id=176)
+  p0_z1: bits[32] = register_read(register=p0_z1, id=178)
+  add.179: bits[32] = add(p0_z1, p0_y1, id=179)
+  register_write.180: () = register_write(p0_x1, register=p1_x1, id=180)
+  register_write.182: () = register_write(add.179, register=p1_add_179, id=182)
+  p1_x1: bits[32] = register_read(register=p1_x1, id=181)
+  p1_add_179: bits[32] = register_read(register=p1_add_179, id=183)
+  add.184: bits[32] = add(p1_x1, p1_add_179, id=184)
+  register_write.185: () = register_write(add.184, register=p2_add_184, id=185)
+  p2_add_184: bits[32] = register_read(register=p2_add_184, id=186)
+  out: () = output_port(p2_add_184, name=out, id=187)
 }

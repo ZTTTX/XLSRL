@@ -22,7 +22,7 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "xor.18769",
+                    "bit_slice.16223",
                     "auto_gen1"
                 ],
                 "idNum": null,
@@ -40,7 +40,7 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "bit_slice.16223",
+                    "xor.18769",
                     "auto_gen0"
                 ],
                 "idNum": null,
@@ -255,7 +255,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.51367",
@@ -287,7 +287,7 @@
                 "OperationType": "kAdd",
                 "Operands": [
                     "concat.30167",
-                    "xor.18704"
+                    "concat.51188"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -304,8 +304,8 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "auto_gen0",
-                    "concat.51188"
+                    "xor.18704",
+                    "auto_gen0"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -462,7 +462,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.51365",
@@ -541,7 +541,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.51368",
@@ -620,7 +620,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.51366",
@@ -742,7 +742,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
-                "ReplaceSelfWith": "auto_gen1"
+                "ReplaceSelfWith": "auto_gen0"
             },
             {
                 "OperationName": "literal.51364",

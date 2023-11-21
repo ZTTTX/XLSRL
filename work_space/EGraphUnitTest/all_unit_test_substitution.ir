@@ -39,9 +39,9 @@ fn SubToNeg(x7: bits[32], y7: bits[32]) -> bits[32] {
 
 fn MulByTwo(x8: bits[32]) -> bits[32] {
   literal.107: bits[32] = literal(value=4, id=107)
-  literal.103: bits[32] = literal(value=1, id=103)
+  literal.103: bits[32] = literal(value=2, id=103)
   umul.108: bits[32] = umul(x8, literal.107, id=108)
-  ret shll.104: bits[32] = shll(x8, literal.103, id=104)
+  ret umul.104: bits[32] = umul(x8, literal.103, id=104)
 }
 
 fn MergeLeftRightShift(x9: bits[32], y9: bits[32], z9: bits[32]) -> bits[32] {
@@ -62,23 +62,22 @@ fn NotOverConcat(x11: bits[4], y11: bits[4], z11: bits[4], v11: bits[4]) -> bits
 }
 
 fn CoreDump(x12: bits[32], y12: bits[32], z12: bits[32]) -> bits[32] {
-  literal.123: bits[32] = literal(value=1, id=123)
-  shll.124: bits[32] = shll(y12, literal.123, id=124)
-  add.125: bits[32] = add(x12, shll.124, id=125)
-  ret add.126: bits[32] = add(z12, add.125, id=126)
+  add.123: bits[32] = add(y12, y12, id=123)
+  add.124: bits[32] = add(x12, add.123, id=124)
+  ret add.125: bits[32] = add(z12, add.124, id=125)
 }
 
 fn MoreThanOneRef(x13: bits[32], y13: bits[32], z13: bits[32]) -> bits[64] {
-  add.134: bits[32] = add(z13, x13, id=134)
-  add.132: bits[32] = add(add.134, y13, id=132)
-  concat.32: bits[64] = concat(add.134, add.132, id=32)
-  concat.33: bits[64] = concat(add.134, x13, id=33)
-  ret add.130: bits[64] = add(concat.32, concat.33, id=130)
+  add.133: bits[32] = add(z13, x13, id=133)
+  add.131: bits[32] = add(add.133, y13, id=131)
+  concat.32: bits[64] = concat(add.133, add.131, id=32)
+  concat.33: bits[64] = concat(add.133, x13, id=33)
+  ret add.129: bits[64] = add(concat.32, concat.33, id=129)
 }
 
 fn UnsupportRef(x14: bits[32], y14: bits[64], z14: bits[32]) -> bits[32] {
-  literal.136: bits[32] = literal(value=123, id=136)
+  literal.135: bits[32] = literal(value=123, id=135)
   bit_slice.37: bits[32] = bit_slice(y14, start=0, width=32, id=37)
-  add.140: bits[32] = add(z14, x14, id=140)
-  ret add.137: bits[32] = add(literal.136, bit_slice.37, id=137)
+  add.139: bits[32] = add(z14, x14, id=139)
+  ret add.136: bits[32] = add(literal.135, bit_slice.37, id=136)
 }

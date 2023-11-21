@@ -4,14 +4,21 @@ file_number 0 "xls/dslx/stdlib/std.x"
 file_number 1 "./work_space/Sha256/sha256.x"
 
 top fn sha256main(message: bits[512]) -> bits[30] {
-  ret literal.51689: bits[30] = literal(value=246483849, id=51689, pos=[(1,79,35)])
+  bit_slice.51545: bits[30] = bit_slice(message, start=386, width=30, id=51545, pos=[(1,79,35)])
+  literal.51368: bits[30] = literal(value=246483849, id=51368, pos=[(1,79,35)])
+  ret add.51196: bits[30] = add(bit_slice.51545, literal.51368, id=51196, pos=[(1,79,35)])
 }
 
 block xls_test(clk: clock, message: bits[512], out: bits[30]) {
-  reg p1_literal_51817(bits[30])
-  message: bits[512] = input_port(name=message, id=51816)
-  literal.51817: bits[30] = literal(value=246483849, id=51817, pos=[(1,79,35)])
-  register_write.51818: () = register_write(literal.51817, register=p1_literal_51817, id=51818, pos=[(1,79,35)])
-  p1_literal_51817: bits[30] = register_read(register=p1_literal_51817, id=51819, pos=[(1,79,35)])
-  out: () = output_port(p1_literal_51817, name=out, id=51820)
+  reg p0_message(bits[512])
+  reg p1_add_51670(bits[30])
+  message: bits[512] = input_port(name=message, id=51665)
+  register_write.51666: () = register_write(message, register=p0_message, id=51666)
+  p0_message: bits[512] = register_read(register=p0_message, id=51667)
+  bit_slice.51668: bits[30] = bit_slice(p0_message, start=386, width=30, id=51668, pos=[(1,79,35)])
+  literal.51669: bits[30] = literal(value=246483849, id=51669, pos=[(1,79,35)])
+  add.51670: bits[30] = add(bit_slice.51668, literal.51669, id=51670, pos=[(1,79,35)])
+  register_write.51671: () = register_write(add.51670, register=p1_add_51670, id=51671, pos=[(1,79,35)])
+  p1_add_51670: bits[30] = register_read(register=p1_add_51670, id=51672, pos=[(1,79,35)])
+  out: () = output_port(p1_add_51670, name=out, id=51673)
 }

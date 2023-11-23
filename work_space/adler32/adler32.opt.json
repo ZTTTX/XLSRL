@@ -1,0 +1,81 @@
+{
+    "0": {
+        "FuncName": "__adler32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 9,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 9,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.93",
+                    "auto_gen1"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.87",
+                "BitWidth": 9,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.93",
+                    "literal.89"
+                ],
+                "idNum": 87,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    21,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.89",
+                "BitWidth": 9,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 89,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    29,
+                    13
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    }
+}

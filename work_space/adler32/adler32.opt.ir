@@ -1,0 +1,20 @@
+package adler32
+
+file_number 0 "./work_space/adler32/adler32.x"
+
+top fn __adler32__main(message: bits[8]) -> bits[32] {
+  literal.94: bits[1] = literal(value=0, id=94, pos=[(0,29,13)])
+  concat.93: bits[9] = concat(literal.94, message, id=93, pos=[(0,29,13)])
+  literal.89: bits[9] = literal(value=1, id=89, pos=[(0,29,13)])
+  literal.90: bits[23] = literal(value=0, id=90, pos=[(0,21,15)])
+  add.87: bits[9] = add(concat.93, literal.89, id=87, pos=[(0,21,15)])
+  concat.91: bits[32] = concat(literal.90, add.87, id=91, pos=[(0,21,15)])
+  literal.68: bits[32] = literal(value=65521, id=68, pos=[(0,21,37)])
+  a__2: bits[32] = umod(concat.91, literal.68, id=70, pos=[(0,21,31)])
+  literal.95: bits[32] = literal(value=65521, id=95, pos=[(0,21,37)])
+  b__2: bits[32] = umod(a__2, literal.95, id=72, pos=[(0,22,20)])
+  bit_slice.75: bits[16] = bit_slice(b__2, start=0, width=16, id=75, pos=[(0,25,5)])
+  literal.76: bits[16] = literal(value=0, id=76, pos=[(0,25,5)])
+  concat.77: bits[32] = concat(bit_slice.75, literal.76, id=77, pos=[(0,25,5)])
+  ret or.80: bits[32] = or(concat.77, a__2, id=80, pos=[(0,25,16)])
+}

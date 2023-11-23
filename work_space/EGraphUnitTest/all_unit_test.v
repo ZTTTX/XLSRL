@@ -18,25 +18,25 @@ module xls_test(
   end
 
   // ===== Pipe stage 1:
-  wire [31:0] p1_add_179_comb;
-  assign p1_add_179_comb = p0_z1 + p0_y1;
+  wire [31:0] p1_add_177_comb;
+  assign p1_add_177_comb = p0_z1 + p0_x1;
 
   // Registers for pipe stage 1:
-  reg [31:0] p1_x1;
-  reg [31:0] p1_add_179;
+  reg [31:0] p1_y1;
+  reg [31:0] p1_add_177;
   always_ff @ (posedge clk) begin
-    p1_x1 <= p0_x1;
-    p1_add_179 <= p1_add_179_comb;
+    p1_y1 <= p0_y1;
+    p1_add_177 <= p1_add_177_comb;
   end
 
   // ===== Pipe stage 2:
-  wire [31:0] p2_add_184_comb;
-  assign p2_add_184_comb = p1_x1 + p1_add_179;
+  wire [31:0] p2_add_182_comb;
+  assign p2_add_182_comb = p1_add_177 + p1_y1;
 
   // Registers for pipe stage 2:
-  reg [31:0] p2_add_184;
+  reg [31:0] p2_add_182;
   always_ff @ (posedge clk) begin
-    p2_add_184 <= p2_add_184_comb;
+    p2_add_182 <= p2_add_182_comb;
   end
-  assign out = p2_add_184;
+  assign out = p2_add_182;
 endmodule

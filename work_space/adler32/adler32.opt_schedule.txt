@@ -1,0 +1,91 @@
+# proto-file: xls/scheduling/pipeline_schedule.proto
+# proto-message: PipelineScheduleProto
+
+function: "__adler32__main"
+stages {
+  stage: 0
+  timed_nodes {
+    node: "literal.94"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "message"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.93"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.108"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.109"
+    node_delay_ps: 541
+    path_delay_ps: 541
+  }
+}
+stages {
+  stage: 1
+  timed_nodes {
+    node: "literal.90"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.91"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.68"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "umod.70"
+    node_delay_ps: 25825
+    path_delay_ps: 25825
+  }
+}
+stages {
+  stage: 2
+  timed_nodes {
+    node: "literal.120"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "umod.72"
+    node_delay_ps: 25825
+    path_delay_ps: 25825
+  }
+  timed_nodes {
+    node: "bit_slice.75"
+    node_delay_ps: 0
+    path_delay_ps: 25825
+  }
+}
+stages {
+  stage: 3
+  timed_nodes {
+    node: "literal.76"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.77"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "or.80"
+    node_delay_ps: 110
+    path_delay_ps: 110
+  }
+}

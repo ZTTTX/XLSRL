@@ -10,11 +10,6 @@ stages {
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "y1"
-    node_delay_ps: 0
-    path_delay_ps: 0
-  }
-  timed_nodes {
     node: "x1"
     node_delay_ps: 0
     path_delay_ps: 0
@@ -23,6 +18,11 @@ stages {
     node: "add.75"
     node_delay_ps: 853
     path_delay_ps: 853
+  }
+  timed_nodes {
+    node: "y1"
+    node_delay_ps: 0
+    path_delay_ps: 0
   }
 }
 stages {

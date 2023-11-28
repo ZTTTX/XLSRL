@@ -83,12 +83,13 @@ absl::Status HandleSingleSub(Package* p, const JsonSingleSub& sub) {
         }
     }
     if (!NodeGenMap.empty()) {
-        // For DeBug:
-        // for (const auto& pair : NodeGenMap) {
-        //     std::cout << "Key: " << pair.first << " Value: " << pair.second.toString() << std::endl;
-        // }
-        return absl::InvalidArgumentError("One or more node cannot be generated due to dependency");
+        std::string error_msg = "One or more nodes cannot be generated due to dependency. Details:\n";
+        for (const auto& pair : NodeGenMap) {
+            error_msg += "Key: " + pair.first + " Value: " + pair.second.toString() + "\n";
+        }
+        return absl::InvalidArgumentError(error_msg);
     }
+
 
     for (const auto& node : sub.NodesInvolved) {
     //Substitude output nodes

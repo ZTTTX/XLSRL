@@ -5,12 +5,12 @@ function: "AddAssociativity"
 stages {
   stage: 0
   timed_nodes {
-    node: "z1"
+    node: "x1"
     node_delay_ps: 0
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "x1"
+    node: "y1"
     node_delay_ps: 0
     path_delay_ps: 0
   }
@@ -20,7 +20,7 @@ stages {
     path_delay_ps: 853
   }
   timed_nodes {
-    node: "y1"
+    node: "z1"
     node_delay_ps: 0
     path_delay_ps: 0
   }

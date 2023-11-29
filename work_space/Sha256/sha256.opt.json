@@ -307,9 +307,8 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "\nauto_gen1",
-                    "\nauto_gen4",
-                    "\n"
+                    "auto_gen1",
+                    "auto_gen4"
                 ],
                 "idNum": null,
                 "Value": -1,
@@ -791,9 +790,8 @@
                 "BitWidth": 32,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "\nauto_gen1",
-                    "\nauto_gen5",
-                    "\n"
+                    "auto_gen1",
+                    "auto_gen5"
                 ],
                 "idNum": null,
                 "Value": -1,

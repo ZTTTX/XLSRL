@@ -1,0 +1,87 @@
+{
+    "15": {
+        "FuncName": "__sha256__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "add30",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "e__13",
+                    "ch__16"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add31",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "S1__16",
+                    "add30"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "temp1__65",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "e__13",
+                    "S1__16"
+                ],
+                "idNum": 19678,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "temp1__66",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "temp1__65",
+                    "ch__16"
+                ],
+                "idNum": 19688,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "add31"
+            }
+        ]
+    }
+}

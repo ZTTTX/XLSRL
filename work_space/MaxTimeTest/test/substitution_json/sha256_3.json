@@ -1,0 +1,87 @@
+{
+    "3": {
+        "FuncName": "__sha256__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "add6",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "ch__63",
+                    "temp1__339"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add7",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "value__96",
+                    "add6"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "temp1__340",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "ch__63",
+                    "value__96"
+                ],
+                "idNum": 50056,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "temp1__343",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "temp1__339",
+                    "temp1__340"
+                ],
+                "idNum": 50059,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "add7"
+            }
+        ]
+    }
+}

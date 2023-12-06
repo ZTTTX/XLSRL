@@ -1,0 +1,87 @@
+{
+    "7": {
+        "FuncName": "__sha256__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "add14",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "s_0__46",
+                    "temp1__349"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add15",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "value__120",
+                    "add14"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "temp1__348",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "s_0__46",
+                    "value__120"
+                ],
+                "idNum": 50127,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "temp1__351",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "temp1__348",
+                    "temp1__349"
+                ],
+                "idNum": 50130,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    79,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "add15"
+            }
+        ]
+    }
+}

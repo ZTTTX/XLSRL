@@ -1,0 +1,87 @@
+{
+    "38": {
+        "FuncName": "__sha256__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "add76",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "a__60",
+                    "f__66"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add77",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "temp1__345",
+                    "add76"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "e__64",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "a__60",
+                    "temp1__345"
+                ],
+                "idNum": 22751,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    84,
+                    14
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.23727",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "e__64",
+                    "f__66"
+                ],
+                "idNum": 23727,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    92,
+                    38
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "add77"
+            }
+        ]
+    }
+}

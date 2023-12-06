@@ -1,0 +1,87 @@
+{
+    "0": {
+        "FuncName": "__sha256__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "add0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "temp1__345",
+                    "add.37940"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add1",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "S0__63",
+                    "add0"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.37939",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "temp1__345",
+                    "S0__63"
+                ],
+                "idNum": 37939,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    92,
+                    6
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "add.37941",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.37939",
+                    "add.37940"
+                ],
+                "idNum": 37941,
+                "Value": -1,
+                "Pos": [
+                    1,
+                    92,
+                    6
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "ReplaceSelfWith": "add1"
+            }
+        ]
+    }
+}

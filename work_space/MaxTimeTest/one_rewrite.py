@@ -1388,21 +1388,3 @@ if __name__ == '__main__':
 
 
 
-#1) Are substitutions generated from 5 AutoRunALL all same?
-#2) Why test.opt.json inclues nothing for AutoTest>test.opt.ir but does generate result for MaxTimeTest>test.opt.json?
-#3) What is (what type .. etc) G_schedule which is the return value of the AutoRunall function?
-
-
-#test.opt.ir : input IR file
-#test.opt.json : rewrite information from IR file (: 함수 GenjsonfromIR )
-#test.opt_substitution.ir : rewritedIR이 여기에 dump됨. subdict에 있는 모든 rewrite들이 적용됨 (함수: AutoRunAll -> RL_main)
-
-#SDC pipeline result 
-# test.opt_schedule.txt : SDC schedule result (함수: AutoRunAll -> codegen_main)
-# test.opt_substitution_schedule.ir에 있는 모든 노드들의 index와 node_delay_ps, path_delay_ps에 대한 시간 정보 
-# 얘가 나한테 가장 중요한 파일일듯?
-
-
-#SDC scheduled IR 
-#test.opt_substitution_schedule.ir : substitution 결과를 바탕으로 SDC scheduling 한 IR?
-#block xls_test 라고 reg 같은 것들도 포함하고 있음 

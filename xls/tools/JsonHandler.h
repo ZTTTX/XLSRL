@@ -27,6 +27,7 @@ public:
     int64_t BitWidth = -1;
     std::vector<std::string> Indices;
     std::vector<int> ArraySize;
+    int NewBitCount;
 
     std::string toString() const {
         std::stringstream ss;
@@ -34,6 +35,7 @@ public:
            << ", OperationType: " << OperationType << ", Id: " << Id 
            << ", ReplaceSelfWith: "<< ReplaceSelfWith 
            <<", BitWidth: " << BitWidth 
+           <<", NewBitCount: "<< NewBitCount
            <<", Position: [";
         // Print the Position vector
         for (size_t i = 0; i < Position.size(); ++i) {

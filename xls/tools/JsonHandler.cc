@@ -39,6 +39,8 @@ JsonNode GetSingleNode(json_value* value){
             }     
         } else if (CurHandleName == "Id") {
             CurNode.Id = CurValue -> u.integer;
+        } else if (CurHandleName == "NewBitCount") {
+            CurNode.NewBitCount = CurValue -> u.integer;
         } else if (CurHandleName == "Position") {
             for (h=0; h < CurValue->u.array.length; h++) {
                 CurNode.Position.push_back(CurValue -> u.array.values[h] -> u.integer);

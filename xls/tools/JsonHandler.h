@@ -17,7 +17,7 @@ namespace xls {
 
 class JsonNode {
 public:
-    int Value;
+    int64_t Value;
     std::string OperationName;
     std::string OperationType;
     std::vector<std::string> Operands; //This stores the rewrited operands

@@ -20,12 +20,12 @@ stages {
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "literal.108"
+    node: "literal.89"
     node_delay_ps: 0
     path_delay_ps: 0
   }
   timed_nodes {
-    node: "add.109"
+    node: "add.118"
     node_delay_ps: 541
     path_delay_ps: 541
   }
@@ -56,7 +56,7 @@ stages {
 stages {
   stage: 2
   timed_nodes {
-    node: "literal.120"
+    node: "literal.119"
     node_delay_ps: 0
     path_delay_ps: 0
   }

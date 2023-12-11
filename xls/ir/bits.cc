@@ -16,6 +16,7 @@
 
 #include <cstdint>
 #include <string>
+#include <iostream>
 
 #include "absl/base/casts.h"
 #include "absl/container/inlined_vector.h"
@@ -40,10 +41,11 @@ namespace xls {
   return MinBitCountUnsigned(value) + 1;
 }
 
-absl::StatusOr<Bits> UBitsWithStatus(uint64_t value, int64_t bit_count) {
+absl::StatusOr<Bits> UBitsWithStatus(uint64_t value, int64_t bit_count) { 
   if (Bits::MinBitCountUnsigned(value) > bit_count) {
+    std::cout << "Current Value is: " << value << "\n" << std::endl;
     return absl::InvalidArgumentError(
-        absl::StrFormat("Value %#x requires %d bits to fit in an unsigned "
+        absl::StrFormat("Unsigned Value %#x requires %d bits to fit in an unsigned "
                         "datatype, but attempting to fit in %d bits.",
                         value, Bits::MinBitCountUnsigned(value), bit_count));
   }
@@ -53,7 +55,7 @@ absl::StatusOr<Bits> UBitsWithStatus(uint64_t value, int64_t bit_count) {
 absl::StatusOr<Bits> SBitsWithStatus(int64_t value, int64_t bit_count) {
   if (Bits::MinBitCountSigned(value) > bit_count) {
     return absl::InvalidArgumentError(
-        absl::StrFormat("Value %#x requires %d bits to fit in an signed "
+        absl::StrFormat("Signed Value %#x requires %d bits to fit in an signed "
                         "datatype, but attempting to fit in %d bits.",
                         value, Bits::MinBitCountSigned(value), bit_count));
   }

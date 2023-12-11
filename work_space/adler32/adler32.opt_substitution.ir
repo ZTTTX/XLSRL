@@ -4,11 +4,11 @@ file_number 0 "./work_space/adler32/adler32.x"
 
 top fn __adler32__main(message: bits[8]) -> bits[32] {
   literal.94: bits[1] = literal(value=0, id=94, pos=[(0,29,13)])
+  literal.89: bits[9] = literal(value=1, id=89, pos=[(0,29,13)])
   concat.93: bits[9] = concat(literal.94, message, id=93, pos=[(0,29,13)])
-  literal.108: bits[9] = literal(value=1, id=108, pos=[(0,29,13)])
   literal.90: bits[23] = literal(value=0, id=90, pos=[(0,21,15)])
-  add.109: bits[9] = add(concat.93, literal.108, id=109, pos=[(0,29,13)])
-  concat.91: bits[32] = concat(literal.90, add.109, id=91, pos=[(0,21,15)])
+  add.108: bits[9] = add(literal.89, concat.93, id=108, pos=[(0,29,13)])
+  concat.91: bits[32] = concat(literal.90, add.108, id=91, pos=[(0,21,15)])
   literal.68: bits[32] = literal(value=65521, id=68, pos=[(0,21,37)])
   umod.70: bits[32] = umod(concat.91, literal.68, id=70, pos=[(0,21,31)])
   literal.95: bits[32] = literal(value=65521, id=95, pos=[(0,21,37)])

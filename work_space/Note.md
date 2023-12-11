@@ -6,8 +6,6 @@ bazel test -c opt -- //xls/...
 
 bazel build -c opt //xls/...
 
-python -m ipykernel install --user --name=egglog --display-name="Python 3.10 (egglog)"
-
 
 # To run my own pass
 
@@ -118,3 +116,7 @@ bazel run //third_party/graph_extraction:graph_extraction -- /home/miao/xls/work
 
 ## With SDC:
 ./bazel-bin/xls/tools/RL_main ./work_space/all_unit_test.ir ./third_party/graph_extraction/test_ins.json ./work_space/all_unit_test_output.ir --clock_period_ps=1000 --delay_model=sky130 > ./work_space/my_test_schedule.txt
+
+# Test on sha256
+
+/home/xlsrl/XLSRL/bazel-bin/xls/tools/RL_main /home/xlsrl/XLSRL/work_space/Sha256/sha256.opt.unify.ir /home/xlsrl/XLSRL/work_space/Sha256/sha256.opt.json /home/xlsrl/XLSRL/work_space/Sha256/sha256.opt_substitution.ir

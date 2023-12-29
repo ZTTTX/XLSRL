@@ -1,0 +1,1578 @@
+# proto-file: xls/scheduling/pipeline_schedule.proto
+# proto-message: PipelineScheduleProto
+
+function: "__riscv_simple__run_instruction"
+stages {
+  stage: 0
+  timed_nodes {
+    node: "ins"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1488"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1522"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1523"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1524"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1525"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1526"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1527"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1545"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1486"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "regs"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1487"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "eq.1537"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "eq.1538"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "eq.1539"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "eq.1540"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "eq.1541"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "eq.1542"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "concat.1563"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "array_index.1562"
+    node_delay_ps: 3769
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "bit_slice.1490"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1501"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.1557"
+    node_delay_ps: 0
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "literal.1500"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1528"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.3061"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "literal.1499"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1492"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1575"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3526"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "eq.1507"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "one_hot.1583"
+    node_delay_ps: 286
+    path_delay_ps: 441
+  }
+  timed_nodes {
+    node: "eq.1506"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "eq.1543"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "bit_slice.2224"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "literal.3013"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1580"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1581"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "eq.1505"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "literal.1648"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1790"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1791"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "ne.1595"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "eq.1596"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "sign_ext.2351"
+    node_delay_ps: 0
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "bit_slice.2196"
+    node_delay_ps: 0
+    path_delay_ps: 441
+  }
+  timed_nodes {
+    node: "sign_ext.2349"
+    node_delay_ps: 0
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "concat.2219"
+    node_delay_ps: 0
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "add.3339"
+    node_delay_ps: 845
+    path_delay_ps: 5467
+  }
+  timed_nodes {
+    node: "bit_slice.2227"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "pc"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1547"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1548"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1549"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1550"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3521"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "eq.1602"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "eq.1603"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "or.1610"
+    node_delay_ps: 115
+    path_delay_ps: 334
+  }
+  timed_nodes {
+    node: "eq.1695"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "eq.1810"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "eq.1811"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "sign_ext.1620"
+    node_delay_ps: 0
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "concat.1621"
+    node_delay_ps: 0
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "and.2197"
+    node_delay_ps: 81
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "dmem"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3045"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.2194"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "concat.2228"
+    node_delay_ps: 0
+    path_delay_ps: 5467
+  }
+  timed_nodes {
+    node: "literal.3041"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.2229"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3067"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3519"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1489"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1493"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.2446"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "nor.1680"
+    node_delay_ps: 110
+    path_delay_ps: 329
+  }
+  timed_nodes {
+    node: "ne.1561"
+    node_delay_ps: 155
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "or.1826"
+    node_delay_ps: 128
+    path_delay_ps: 462
+  }
+  timed_nodes {
+    node: "and.1664"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.3483"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "bit_slice.3485"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "array_index.1642"
+    node_delay_ps: 2047
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "add.3340"
+    node_delay_ps: 853
+    path_delay_ps: 5475
+  }
+  timed_nodes {
+    node: "bit_slice.2644"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.2406"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "array_index.1688"
+    node_delay_ps: 2047
+    path_delay_ps: 7514
+  }
+  timed_nodes {
+    node: "add.3341"
+    node_delay_ps: 853
+    path_delay_ps: 5475
+  }
+  timed_nodes {
+    node: "array_index.1646"
+    node_delay_ps: 3769
+    path_delay_ps: 8391
+  }
+  timed_nodes {
+    node: "add.3342"
+    node_delay_ps: 837
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "literal.3522"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3520"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.3413"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3354"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "array_index.1577"
+    node_delay_ps: 3769
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "sign_ext.2356"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.2242"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1659"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1660"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.1661"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.1724"
+    node_delay_ps: 87
+    path_delay_ps: 421
+  }
+  timed_nodes {
+    node: "not.3011"
+    node_delay_ps: 21
+    path_delay_ps: 483
+  }
+  timed_nodes {
+    node: "sign_ext.1622"
+    node_delay_ps: 0
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "bit_slice.3480"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "and.2191"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.3511"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.3515"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "bit_slice.3484"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "or.3364"
+    node_delay_ps: 110
+    path_delay_ps: 632
+  }
+  timed_nodes {
+    node: "bit_slice.3482"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "shll.3065"
+    node_delay_ps: 2022
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "xor.1732"
+    node_delay_ps: 128
+    path_delay_ps: 3897
+  }
+  timed_nodes {
+    node: "shra.1734"
+    node_delay_ps: 2022
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "or.1735"
+    node_delay_ps: 110
+    path_delay_ps: 3879
+  }
+  timed_nodes {
+    node: "sign_ext.1738"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "bit_slice.2627"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "array_index.1643"
+    node_delay_ps: 2047
+    path_delay_ps: 7522
+  }
+  timed_nodes {
+    node: "bit_slice.2645"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "or.2509"
+    node_delay_ps: 110
+    path_delay_ps: 410
+  }
+  timed_nodes {
+    node: "bit_slice.2643"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.3507"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "bit_slice.3517"
+    node_delay_ps: 0
+    path_delay_ps: 522
+  }
+  timed_nodes {
+    node: "bit_slice.2339"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "bit_slice.2220"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "bit_slice.2205"
+    node_delay_ps: 0
+    path_delay_ps: 7514
+  }
+  timed_nodes {
+    node: "array_index.1689"
+    node_delay_ps: 2047
+    path_delay_ps: 7522
+  }
+  timed_nodes {
+    node: "literal.2234"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "array_index.1691"
+    node_delay_ps: 2047
+    path_delay_ps: 10438
+  }
+  timed_nodes {
+    node: "bit_slice.2342"
+    node_delay_ps: 0
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "bit_slice.2232"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "ugt.1764"
+    node_delay_ps: 190
+    path_delay_ps: 190
+  }
+  timed_nodes {
+    node: "concat.1970"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3356"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.3348"
+    node_delay_ps: 631
+    path_delay_ps: 631
+  }
+  timed_nodes {
+    node: "bit_slice.2237"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "literal.3524"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.3035"
+    node_delay_ps: 845
+    path_delay_ps: 845
+  }
+  timed_nodes {
+    node: "bit_slice.2245"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.2447"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "or.2093"
+    node_delay_ps: 124
+    path_delay_ps: 343
+  }
+  timed_nodes {
+    node: "or.2022"
+    node_delay_ps: 110
+    path_delay_ps: 593
+  }
+  timed_nodes {
+    node: "bit_slice.3478"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "and.1665"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "or.3409"
+    node_delay_ps: 110
+    path_delay_ps: 410
+  }
+  timed_nodes {
+    node: "concat.3516"
+    node_delay_ps: 0
+    path_delay_ps: 632
+  }
+  timed_nodes {
+    node: "bit_slice.2431"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "bit_slice.2432"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2433"
+    node_delay_ps: 0
+    path_delay_ps: 3897
+  }
+  timed_nodes {
+    node: "bit_slice.2435"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2436"
+    node_delay_ps: 0
+    path_delay_ps: 3879
+  }
+  timed_nodes {
+    node: "bit_slice.2437"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "sign_ext.2548"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "concat.2438"
+    node_delay_ps: 0
+    path_delay_ps: 7522
+  }
+  timed_nodes {
+    node: "bit_slice.2451"
+    node_delay_ps: 0
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "concat.3506"
+    node_delay_ps: 0
+    path_delay_ps: 632
+  }
+  timed_nodes {
+    node: "bit_slice.2419"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "bit_slice.2420"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2421"
+    node_delay_ps: 0
+    path_delay_ps: 3897
+  }
+  timed_nodes {
+    node: "bit_slice.2423"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2424"
+    node_delay_ps: 0
+    path_delay_ps: 3879
+  }
+  timed_nodes {
+    node: "bit_slice.2425"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "bit_slice.2443"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "bit_slice.2211"
+    node_delay_ps: 0
+    path_delay_ps: 7514
+  }
+  timed_nodes {
+    node: "bit_slice.2450"
+    node_delay_ps: 0
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "concat.3518"
+    node_delay_ps: 0
+    path_delay_ps: 632
+  }
+  timed_nodes {
+    node: "bit_slice.2160"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "bit_slice.2161"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2162"
+    node_delay_ps: 0
+    path_delay_ps: 3897
+  }
+  timed_nodes {
+    node: "bit_slice.2164"
+    node_delay_ps: 0
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "bit_slice.2165"
+    node_delay_ps: 0
+    path_delay_ps: 3879
+  }
+  timed_nodes {
+    node: "and.2341"
+    node_delay_ps: 81
+    path_delay_ps: 3850
+  }
+  timed_nodes {
+    node: "bit_slice.2167"
+    node_delay_ps: 0
+    path_delay_ps: 6669
+  }
+  timed_nodes {
+    node: "concat.2221"
+    node_delay_ps: 0
+    path_delay_ps: 7522
+  }
+  timed_nodes {
+    node: "concat.2206"
+    node_delay_ps: 0
+    path_delay_ps: 7522
+  }
+  timed_nodes {
+    node: "concat.2208"
+    node_delay_ps: 0
+    path_delay_ps: 10438
+  }
+  timed_nodes {
+    node: "concat.2343"
+    node_delay_ps: 0
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "sign_ext.1996"
+    node_delay_ps: 0
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "concat.1908"
+    node_delay_ps: 0
+    path_delay_ps: 190
+  }
+  timed_nodes {
+    node: "bit_slice.1598"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "add.3049"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "concat.3357"
+    node_delay_ps: 0
+    path_delay_ps: 631
+  }
+  timed_nodes {
+    node: "add.3344"
+    node_delay_ps: 845
+    path_delay_ps: 4614
+  }
+  timed_nodes {
+    node: "bit_slice.2240"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "literal.3355"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "sign_ext.2550"
+    node_delay_ps: 0
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "concat.2445"
+    node_delay_ps: 0
+    path_delay_ps: 155
+  }
+  timed_nodes {
+    node: "sign_ext.1637"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "eq.1747"
+    node_delay_ps: 333
+    path_delay_ps: 4102
+  }
+  timed_nodes {
+    node: "concat.2233"
+    node_delay_ps: 0
+    path_delay_ps: 837
+  }
+  timed_nodes {
+    node: "concat.2246"
+    node_delay_ps: 0
+    path_delay_ps: 845
+  }
+  timed_nodes {
+    node: "ne.1750"
+    node_delay_ps: 333
+    path_delay_ps: 4102
+  }
+  timed_nodes {
+    node: "slt.1751"
+    node_delay_ps: 554
+    path_delay_ps: 4323
+  }
+  timed_nodes {
+    node: "sge.1752"
+    node_delay_ps: 554
+    path_delay_ps: 4323
+  }
+  timed_nodes {
+    node: "ult.1753"
+    node_delay_ps: 554
+    path_delay_ps: 4323
+  }
+  timed_nodes {
+    node: "uge.1754"
+    node_delay_ps: 554
+    path_delay_ps: 4323
+  }
+  timed_nodes {
+    node: "sign_ext.2358"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "or.2516"
+    node_delay_ps: 110
+    path_delay_ps: 703
+  }
+  timed_nodes {
+    node: "concat.3510"
+    node_delay_ps: 0
+    path_delay_ps: 410
+  }
+  timed_nodes {
+    node: "xor.1707"
+    node_delay_ps: 128
+    path_delay_ps: 3897
+  }
+  timed_nodes {
+    node: "and.1708"
+    node_delay_ps: 81
+    path_delay_ps: 3850
+  }
+  timed_nodes {
+    node: "or.1709"
+    node_delay_ps: 110
+    path_delay_ps: 3879
+  }
+  timed_nodes {
+    node: "shll.3057"
+    node_delay_ps: 2022
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "sub.3055"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "add.3053"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "shra.1713"
+    node_delay_ps: 2022
+    path_delay_ps: 5791
+  }
+  timed_nodes {
+    node: "one_hot_sel.3372"
+    node_delay_ps: 519
+    path_delay_ps: 8041
+  }
+  timed_nodes {
+    node: "one_hot_sel.3385"
+    node_delay_ps: 134
+    path_delay_ps: 7648
+  }
+  timed_nodes {
+    node: "one_hot_sel.3400"
+    node_delay_ps: 392
+    path_delay_ps: 10830
+  }
+  timed_nodes {
+    node: "bit_slice.1755"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.1807"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3525"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.1997"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "array_update.1629"
+    node_delay_ps: 2303
+    path_delay_ps: 6925
+  }
+  timed_nodes {
+    node: "bit_slice.1630"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "add.3027"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "concat.2241"
+    node_delay_ps: 0
+    path_delay_ps: 4614
+  }
+  timed_nodes {
+    node: "literal.3528"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "add.3352"
+    node_delay_ps: 631
+    path_delay_ps: 631
+  }
+  timed_nodes {
+    node: "or.1662"
+    node_delay_ps: 128
+    path_delay_ps: 283
+  }
+  timed_nodes {
+    node: "literal.3523"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "or.1636"
+    node_delay_ps: 124
+    path_delay_ps: 279
+  }
+  timed_nodes {
+    node: "and.2354"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "add.3059"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "sel.1780"
+    node_delay_ps: 762
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "sel.1781"
+    node_delay_ps: 762
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "sel.1782"
+    node_delay_ps: 762
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "sel.1783"
+    node_delay_ps: 762
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "sel.1784"
+    node_delay_ps: 762
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "sel.1785"
+    node_delay_ps: 762
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "add.3017"
+    node_delay_ps: 845
+    path_delay_ps: 845
+  }
+  timed_nodes {
+    node: "or.2702"
+    node_delay_ps: 110
+    path_delay_ps: 813
+  }
+  timed_nodes {
+    node: "or.1976"
+    node_delay_ps: 115
+    path_delay_ps: 598
+  }
+  timed_nodes {
+    node: "one_hot_sel.3411"
+    node_delay_ps: 1023
+    path_delay_ps: 6814
+  }
+  timed_nodes {
+    node: "concat.2452"
+    node_delay_ps: 0
+    path_delay_ps: 10830
+  }
+  timed_nodes {
+    node: "concat.1821"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "ne.1983"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "bit_slice.2063"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "array_update.1672"
+    node_delay_ps: 2303
+    path_delay_ps: 9228
+  }
+  timed_nodes {
+    node: "bit_slice.1673"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "add.2999"
+    node_delay_ps: 853
+    path_delay_ps: 5467
+  }
+  timed_nodes {
+    node: "concat.3359"
+    node_delay_ps: 0
+    path_delay_ps: 631
+  }
+  timed_nodes {
+    node: "not.3039"
+    node_delay_ps: 21
+    path_delay_ps: 304
+  }
+  timed_nodes {
+    node: "ne.1678"
+    node_delay_ps: 219
+    path_delay_ps: 219
+  }
+  timed_nodes {
+    node: "not.3037"
+    node_delay_ps: 21
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "concat.2223"
+    node_delay_ps: 0
+    path_delay_ps: 593
+  }
+  timed_nodes {
+    node: "bit_slice.2449"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "bit_slice.2301"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2302"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2303"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2304"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2305"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2306"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2417"
+    node_delay_ps: 0
+    path_delay_ps: 845
+  }
+  timed_nodes {
+    node: "concat.2679"
+    node_delay_ps: 0
+    path_delay_ps: 703
+  }
+  timed_nodes {
+    node: "bit_slice.2618"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.2448"
+    node_delay_ps: 0
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "bit_slice.2620"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2621"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2622"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2623"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2624"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2625"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2412"
+    node_delay_ps: 0
+    path_delay_ps: 845
+  }
+  timed_nodes {
+    node: "concat.2743"
+    node_delay_ps: 0
+    path_delay_ps: 813
+  }
+  timed_nodes {
+    node: "bit_slice.2611"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2612"
+    node_delay_ps: 0
+    path_delay_ps: 4864
+  }
+  timed_nodes {
+    node: "bit_slice.2613"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2614"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2615"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "bit_slice.2616"
+    node_delay_ps: 0
+    path_delay_ps: 5085
+  }
+  timed_nodes {
+    node: "concat.1973"
+    node_delay_ps: 0
+    path_delay_ps: 598
+  }
+  timed_nodes {
+    node: "array_update.1794"
+    node_delay_ps: 16491
+    path_delay_ps: 23305
+  }
+  timed_nodes {
+    node: "array_update.1803"
+    node_delay_ps: 16491
+    path_delay_ps: 27321
+  }
+  timed_nodes {
+    node: "array_update.1832"
+    node_delay_ps: 16491
+    path_delay_ps: 16491
+  }
+  timed_nodes {
+    node: "array_update.1834"
+    node_delay_ps: 16491
+    path_delay_ps: 17328
+  }
+  timed_nodes {
+    node: "bit_slice.2073"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "or.2030"
+    node_delay_ps: 110
+    path_delay_ps: 410
+  }
+  timed_nodes {
+    node: "array_update.1718"
+    node_delay_ps: 2303
+    path_delay_ps: 11531
+  }
+  timed_nodes {
+    node: "bit_slice.1719"
+    node_delay_ps: 0
+    path_delay_ps: 3769
+  }
+  timed_nodes {
+    node: "add.3021"
+    node_delay_ps: 853
+    path_delay_ps: 4622
+  }
+  timed_nodes {
+    node: "array_update.1721"
+    node_delay_ps: 2303
+    path_delay_ps: 6925
+  }
+  timed_nodes {
+    node: "and.1759"
+    node_delay_ps: 81
+    path_delay_ps: 385
+  }
+  timed_nodes {
+    node: "and.1722"
+    node_delay_ps: 84
+    path_delay_ps: 418
+  }
+  timed_nodes {
+    node: "and.1723"
+    node_delay_ps: 87
+    path_delay_ps: 421
+  }
+  timed_nodes {
+    node: "and.1778"
+    node_delay_ps: 81
+    path_delay_ps: 385
+  }
+  timed_nodes {
+    node: "one_hot_sel.2308"
+    node_delay_ps: 960
+    path_delay_ps: 6045
+  }
+  timed_nodes {
+    node: "one_hot_sel.2545"
+    node_delay_ps: 31
+    path_delay_ps: 5116
+  }
+  timed_nodes {
+    node: "one_hot_sel.2740"
+    node_delay_ps: 31
+    path_delay_ps: 5116
+  }
+  timed_nodes {
+    node: "concat.2074"
+    node_delay_ps: 0
+    path_delay_ps: 410
+  }
+  timed_nodes {
+    node: "array_update.1767"
+    node_delay_ps: 2303
+    path_delay_ps: 13834
+  }
+  timed_nodes {
+    node: "array_update.1768"
+    node_delay_ps: 2303
+    path_delay_ps: 9228
+  }
+  timed_nodes {
+    node: "array_update.1769"
+    node_delay_ps: 2303
+    path_delay_ps: 6925
+  }
+  timed_nodes {
+    node: "after_all.639"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "not.3007"
+    node_delay_ps: 21
+    path_delay_ps: 406
+  }
+  timed_nodes {
+    node: "nand.1795"
+    node_delay_ps: 81
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "not.3005"
+    node_delay_ps: 21
+    path_delay_ps: 439
+  }
+  timed_nodes {
+    node: "not.3001"
+    node_delay_ps: 21
+    path_delay_ps: 442
+  }
+  timed_nodes {
+    node: "not.3009"
+    node_delay_ps: 21
+    path_delay_ps: 442
+  }
+  timed_nodes {
+    node: "not.3003"
+    node_delay_ps: 21
+    path_delay_ps: 406
+  }
+  timed_nodes {
+    node: "concat.2646"
+    node_delay_ps: 0
+    path_delay_ps: 6045
+  }
+  timed_nodes {
+    node: "one_hot_sel.2032"
+    node_delay_ps: 4028
+    path_delay_ps: 17862
+  }
+  timed_nodes {
+    node: "assert.1877"
+    node_delay_ps: 0
+    path_delay_ps: 462
+  }
+  timed_nodes {
+    node: "assert.1878"
+    node_delay_ps: 0
+    path_delay_ps: 406
+  }
+  timed_nodes {
+    node: "assert.1879"
+    node_delay_ps: 0
+    path_delay_ps: 300
+  }
+  timed_nodes {
+    node: "assert.1880"
+    node_delay_ps: 0
+    path_delay_ps: 439
+  }
+  timed_nodes {
+    node: "assert.1881"
+    node_delay_ps: 0
+    path_delay_ps: 442
+  }
+  timed_nodes {
+    node: "assert.1882"
+    node_delay_ps: 0
+    path_delay_ps: 442
+  }
+  timed_nodes {
+    node: "assert.1884"
+    node_delay_ps: 0
+    path_delay_ps: 406
+  }
+}
+stages {
+  stage: 1
+  timed_nodes {
+    node: "one_hot_sel.1923"
+    node_delay_ps: 32001
+    path_delay_ps: 32001
+  }
+}
+stages {
+  stage: 2
+  timed_nodes {
+    node: "literal.1715"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.3527"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "array_update.1872"
+    node_delay_ps: 16491
+    path_delay_ps: 16491
+  }
+  timed_nodes {
+    node: "tuple.1875"
+    node_delay_ps: 0
+    path_delay_ps: 16491
+  }
+}

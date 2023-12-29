@@ -1,0 +1,452 @@
+{
+    "0": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNot",
+                "Operands": [
+                    "xor.213"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.37",
+                "BitWidth": 32,
+                "OperationType": "not",
+                "Operands": [
+                    "xor.213"
+                ],
+                "idNum": 37,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    30,
+                    51
+                ],
+                "FuncIO": "Out",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "1": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.199"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.202",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.199"
+                ],
+                "idNum": 202,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "2": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.190"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.193",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.190"
+                ],
+                "idNum": 193,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "3": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.181"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.184",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.181"
+                ],
+                "idNum": 184,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "4": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.172"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.175",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.172"
+                ],
+                "idNum": 175,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "5": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.163"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.166",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.163"
+                ],
+                "idNum": 166,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "6": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.154"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.157",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.154"
+                ],
+                "idNum": 157,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "7": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.145"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.148",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.145"
+                ],
+                "idNum": 148,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "8": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kNeg",
+                "Operands": [
+                    "concat.236"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "neg.139",
+                "BitWidth": 32,
+                "OperationType": "neg",
+                "Operands": [
+                    "concat.236"
+                ],
+                "idNum": 139,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    24,
+                    15
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "9": {
+        "FuncName": "__crc32__main",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 8,
+                "OperationType": "kNot",
+                "Operands": [
+                    "message"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.225",
+                "BitWidth": 8,
+                "OperationType": "not",
+                "Operands": [
+                    "message"
+                ],
+                "idNum": 225,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    21,
+                    16
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    }
+}

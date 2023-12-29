@@ -1,0 +1,1587 @@
+{
+    "0": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.1970",
+                    "concat.2241"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1674",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "concat.2241",
+                    "concat.1970"
+                ],
+                "idNum": 1674,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    452,
+                    55
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "1": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "and.1723"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1771",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "and.1723"
+                ],
+                "idNum": 1771,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    530,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "2": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "and.1778"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1804",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "and.1778"
+                ],
+                "idNum": 1804,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    531,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "3": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "and.1722"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1770",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "and.1722"
+                ],
+                "idNum": 1770,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    530,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "4": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "and.1759"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1792",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "and.1759"
+                ],
+                "idNum": 1792,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    526,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "5": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "and.1724"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1772",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "and.1724"
+                ],
+                "idNum": 1772,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    530,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "6": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "or.1826"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1835",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "or.1826"
+                ],
+                "idNum": 1835,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "7": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 31,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "bit_slice.2224"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.2226",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.2224",
+                    "literal.2252"
+                ],
+                "idNum": 2226,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    407,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.2252",
+                "BitWidth": 31,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 2252,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    407,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "8": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "sign_ext.2358",
+                    "bit_slice.2242"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.2249",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.2242",
+                    "sign_ext.2358"
+                ],
+                "idNum": 2249,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    491,
+                    7
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "9": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 3,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "concat.1970"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen2",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen0",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1720",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.1675",
+                    "concat.1970"
+                ],
+                "idNum": 1720,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    454,
+                    55
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen2"
+            },
+            {
+                "OperationName": "add.1675",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1577",
+                    "literal.2751"
+                ],
+                "idNum": 1675,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    454,
+                    47
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "literal.2751",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 2751,
+                "Value": 3,
+                "Pos": [
+                    0,
+                    408,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 3,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "10": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "concat.1970"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen2",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen0",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1631",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.1600",
+                    "concat.1970"
+                ],
+                "idNum": 1631,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    450,
+                    55
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen2"
+            },
+            {
+                "OperationName": "add.1600",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1577",
+                    "literal.1589"
+                ],
+                "idNum": 1600,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    450,
+                    47
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "Kill"
+            },
+            {
+                "OperationName": "literal.1589",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 1589,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    404,
+                    56
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "11": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 31,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "bit_slice.2237"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.2239",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.2237",
+                    "literal.2753"
+                ],
+                "idNum": 2239,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    452,
+                    47
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.2753",
+                "BitWidth": 31,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 2753,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    407,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "12": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 31,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "sign_ext.2356",
+                    "bit_slice.2242"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.2244",
+                "BitWidth": 31,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.2242",
+                    "sign_ext.2356"
+                ],
+                "idNum": 2244,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    503,
+                    18
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "13": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "or.1636"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1679",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "or.1636"
+                ],
+                "idNum": 1679,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    530,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "14": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 1,
+                "OperationType": "kNot",
+                "Operands": [
+                    "or.1662"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "not.1705",
+                "BitWidth": 1,
+                "OperationType": "not",
+                "Operands": [
+                    "or.1662"
+                ],
+                "idNum": 1705,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    526,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "15": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 3,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "add.1588"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1645",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.1588",
+                    "literal.1609"
+                ],
+                "idNum": 1645,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    408,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.1609",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 1609,
+                "Value": 3,
+                "Pos": [
+                    0,
+                    408,
+                    35
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 3,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "16": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 32,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "add.1588"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1607",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "add.1588",
+                    "literal.2750"
+                ],
+                "idNum": 1607,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    404,
+                    50
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.2750",
+                "BitWidth": 32,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 2750,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    404,
+                    56
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    },
+    "17": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.1970",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1599",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1577",
+                    "concat.1970"
+                ],
+                "idNum": 1599,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    448,
+                    49
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "18": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kShrl",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shrl.1714",
+                "BitWidth": 32,
+                "OperationType": "shrl",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": 1714,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    368,
+                    23
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "19": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "array_index.1577",
+                    "array_index.1562"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1712",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": 1712,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    362,
+                    20
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "20": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kSub",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "sub.1711",
+                "BitWidth": 32,
+                "OperationType": "sub",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": 1711,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    359,
+                    20
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "21": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kShll",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shll.1710",
+                "BitWidth": 32,
+                "OperationType": "shll",
+                "Operands": [
+                    "array_index.1562",
+                    "array_index.1577"
+                ],
+                "idNum": 1710,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    355,
+                    22
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "22": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "sign_ext.1637",
+                    "array_index.1562"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1682",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1562",
+                    "sign_ext.1637"
+                ],
+                "idNum": 1682,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    420,
+                    38
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "23": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "concat.1563",
+                    "array_index.1562"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.1588",
+                "BitWidth": 32,
+                "OperationType": "add",
+                "Operands": [
+                    "array_index.1562",
+                    "concat.1563"
+                ],
+                "idNum": 1588,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    401,
+                    33
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "24": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kShrl",
+                "Operands": [
+                    "array_index.1562",
+                    "bit_slice.1486"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shrl.1733",
+                "BitWidth": 32,
+                "OperationType": "shrl",
+                "Operands": [
+                    "array_index.1562",
+                    "bit_slice.1486"
+                ],
+                "idNum": 1733,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    391,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "25": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 32,
+                "OperationType": "kShll",
+                "Operands": [
+                    "array_index.1562",
+                    "bit_slice.1486"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "shll.1731",
+                "BitWidth": 32,
+                "OperationType": "shll",
+                "Operands": [
+                    "array_index.1562",
+                    "bit_slice.1486"
+                ],
+                "idNum": 1731,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    389,
+                    29
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            }
+        ]
+    },
+    "26": {
+        "FuncName": "__riscv_simple__run_instruction",
+        "NodesInvolved": [
+            {
+                "OperationName": "auto_gen1",
+                "BitWidth": 30,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "auto_gen0",
+                "BitWidth": 30,
+                "OperationType": "kAdd",
+                "Operands": [
+                    "auto_gen1",
+                    "bit_slice.2229"
+                ],
+                "idNum": null,
+                "Value": -1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
+                "OperationName": "add.2231",
+                "BitWidth": 30,
+                "OperationType": "add",
+                "Operands": [
+                    "bit_slice.2229",
+                    "literal.2253"
+                ],
+                "idNum": 2231,
+                "Value": -1,
+                "Pos": [
+                    0,
+                    418,
+                    41
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": -1,
+                "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.2253",
+                "BitWidth": 30,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 2253,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    418,
+                    41
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
+            }
+        ]
+    }
+}

@@ -1,0 +1,443 @@
+# proto-file: xls/scheduling/pipeline_schedule.proto
+# proto-message: PipelineScheduleProto
+
+function: "__crc32__main"
+stages {
+  stage: 0
+  timed_nodes {
+    node: "message"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "not.376"
+    node_delay_ps: 21
+    path_delay_ps: 21
+  }
+  timed_nodes {
+    node: "literal.464"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.231"
+    node_delay_ps: 0
+    path_delay_ps: 21
+  }
+  timed_nodes {
+    node: "concat.236"
+    node_delay_ps: 0
+    path_delay_ps: 21
+  }
+  timed_nodes {
+    node: "literal.238"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "bit_slice.233"
+    node_delay_ps: 0
+    path_delay_ps: 21
+  }
+  timed_nodes {
+    node: "neg.374"
+    node_delay_ps: 621
+    path_delay_ps: 642
+  }
+  timed_nodes {
+    node: "literal.21"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.239"
+    node_delay_ps: 0
+    path_delay_ps: 21
+  }
+  timed_nodes {
+    node: "and.215"
+    node_delay_ps: 81
+    path_delay_ps: 723
+  }
+  timed_nodes {
+    node: "xor.142"
+    node_delay_ps: 128
+    path_delay_ps: 851
+  }
+  timed_nodes {
+    node: "bit_slice.144"
+    node_delay_ps: 0
+    path_delay_ps: 851
+  }
+  timed_nodes {
+    node: "bit_slice.147"
+    node_delay_ps: 0
+    path_delay_ps: 851
+  }
+}
+stages {
+  stage: 1
+  timed_nodes {
+    node: "literal.277"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.145"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.137"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.372"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.465"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.149"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.216"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.151"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.153"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.156"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 2
+  timed_nodes {
+    node: "literal.458"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.154"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.472"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.370"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.466"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.158"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.217"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.160"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.162"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.165"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 3
+  timed_nodes {
+    node: "literal.459"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.163"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.473"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.368"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.467"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.167"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.218"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.169"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.171"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.174"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 4
+  timed_nodes {
+    node: "literal.460"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.172"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.474"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.366"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.468"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.176"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.219"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.178"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.180"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.183"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 5
+  timed_nodes {
+    node: "literal.461"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.181"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.475"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.364"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.469"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.185"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.220"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.187"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.189"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.192"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 6
+  timed_nodes {
+    node: "literal.462"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.190"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.476"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.362"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.470"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.194"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.221"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.196"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.198"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "bit_slice.201"
+    node_delay_ps: 0
+    path_delay_ps: 830
+  }
+}
+stages {
+  stage: 7
+  timed_nodes {
+    node: "literal.463"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.199"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "literal.477"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "neg.360"
+    node_delay_ps: 621
+    path_delay_ps: 621
+  }
+  timed_nodes {
+    node: "literal.471"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "concat.203"
+    node_delay_ps: 0
+    path_delay_ps: 0
+  }
+  timed_nodes {
+    node: "and.222"
+    node_delay_ps: 81
+    path_delay_ps: 702
+  }
+  timed_nodes {
+    node: "xor.213"
+    node_delay_ps: 128
+    path_delay_ps: 830
+  }
+  timed_nodes {
+    node: "not.358"
+    node_delay_ps: 21
+    path_delay_ps: 851
+  }
+}

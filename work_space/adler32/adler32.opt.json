@@ -3,11 +3,27 @@
         "FuncName": "__adler32__main",
         "NodesInvolved": [
             {
+                "OperationName": "auto_gen1",
+                "BitWidth": 9,
+                "OperationType": "Literal",
+                "Operands": null,
+                "idNum": null,
+                "Value": 1,
+                "Pos": null,
+                "FuncIO": null,
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": null,
+                "ReplaceSelfWith": "Gen"
+            },
+            {
                 "OperationName": "auto_gen0",
                 "BitWidth": 9,
                 "OperationType": "kAdd",
                 "Operands": [
-                    "literal.89",
+                    "auto_gen1",
                     "concat.93"
                 ],
                 "idNum": null,
@@ -18,6 +34,7 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
+                "NewBitCount": null,
                 "ReplaceSelfWith": "Gen"
             },
             {
@@ -40,7 +57,28 @@
                 "Width": null,
                 "ArraySize": null,
                 "Indices": null,
+                "NewBitCount": -1,
                 "ReplaceSelfWith": "auto_gen0"
+            },
+            {
+                "OperationName": "literal.89",
+                "BitWidth": 9,
+                "OperationType": "literal",
+                "Operands": [],
+                "idNum": 89,
+                "Value": 1,
+                "Pos": [
+                    0,
+                    29,
+                    13
+                ],
+                "FuncIO": "Not",
+                "Start": null,
+                "Width": null,
+                "ArraySize": null,
+                "Indices": null,
+                "NewBitCount": 1,
+                "ReplaceSelfWith": "Kill"
             }
         ]
     }
